@@ -1,0 +1,48 @@
+.login-comp {
+  display: flex;
+}
+.login-image {
+  width: 1344px;
+  height: 100vh;
+}
+
+.login-image > img {
+  width: 1344px;
+  height: 100vh;
+  object-fit: cover;
+}
+.legend {
+  background-color: transparent !important;
+  text-align: left !important;
+  margin-left: -40% !important;
+  opacity: 1 !important;
+}
+.legend > h3 {
+  font-size: 43px;
+  font-weight: normal;
+  height: 95px;
+  width: 615px;
+}
+.legend > p {
+  width: 848px;
+  height: 101px;
+  font-size: 16px;
+}
+.login-logic {
+  box-sizing: border-box;
+  width: 576px;
+  height: 100vh;
+  padding: 386px 87px 0 87px;
+  background-color: #fff;
+}
+.lostpwd {
+  color: #000;
+  text-decoration: none;
+}
+.privacy-policy{
+    margin-top: 13rem;
+}
+.privacy-policy > a {
+  color: #000;
+  text-decoration: none;
+}
