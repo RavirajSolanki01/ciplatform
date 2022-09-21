@@ -40,28 +40,23 @@
   background: none;
   border: none;
 }
-.privacy-policy{
-    margin-top: 13rem;
+.privacy-policy {
+  margin-top: 13rem;
 }
 .privacy-policy > a {
   color: #000;
   text-decoration: none;
 }
 
-
-.forgot-password{
-
-}
-.forgot-title{
+.forgot-title {
   font-size: 26px;
   margin: 0 0 10px 0;
-
 }
-.forgot-para{
+.forgot-para {
   margin: 0 0 36px 0;
   font-size: 14px;
 }
-.btn-none{
+.btn-none {
   background: none;
   border: none;
 }
