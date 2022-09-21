@@ -32,12 +32,13 @@
   box-sizing: border-box;
   width: 576px;
   height: 100vh;
-  padding: 386px 87px 0 87px;
+  padding: 315px 87px 0 87px;
   background-color: #fff;
 }
 .lostpwd {
   color: #000;
-  text-decoration: none;
+  background: none;
+  border: none;
 }
 .privacy-policy{
     margin-top: 13rem;
@@ -45,4 +46,22 @@
 .privacy-policy > a {
   color: #000;
   text-decoration: none;
+}
+
+
+.forgot-password{
+
+}
+.forgot-title{
+  font-size: 26px;
+  margin: 0 0 10px 0;
+
+}
+.forgot-para{
+  margin: 0 0 36px 0;
+  font-size: 14px;
+}
+.btn-none{
+  background: none;
+  border: none;
 }
