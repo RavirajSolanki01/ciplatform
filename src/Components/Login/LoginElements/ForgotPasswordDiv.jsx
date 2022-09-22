@@ -1,6 +1,6 @@
 import React from "react";
-import "./login.css";
-import { NormalButton, NormalInput } from "../../Helper";
+import "../login.css";
+import { NormalButton, NormalInput } from "../../../Helper";
 
 export const ForgotPasswordDiv = ({ forgotBtnClick }) => {
   return (

@@ -1,8 +1,8 @@
-import "./login.css";
+import "../login.css";
 import React from "react";
-import { NormalButton, NormalInput } from "../../Helper";
+import { NormalButton, NormalInput } from "../../../Helper";
 
-export const ResetPasswordDiv = ({resetBtnClick}) => {
+export const ResetPasswordDiv = ({ resetBtnClick }) => {
   return (
     <div className="reset-div" data-testid="reset-div">
       <p className="forgot-title">New Password</p>
@@ -23,11 +23,9 @@ export const ResetPasswordDiv = ({resetBtnClick}) => {
       />
       <NormalButton
         name="Change Password"
-        btnClick={() => console.log("Password changed")}
+        btnClick={() => resetBtnClick("registration")}
       />
-      <button className="btn-none" 
-      onClick={() => resetBtnClick("login")}
-      >
+      <button className="btn-none" onClick={() => resetBtnClick("login")}>
         Login
       </button>
     </div>

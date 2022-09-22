@@ -4,9 +4,12 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "react-router-dom";
 import { carouselData } from "../../Data/Data";
-import { LoginDiv } from "./LoginDiv";
-import { ResetPasswordDiv } from "./ResetPasswordDiv";
-import { ForgotPasswordDiv } from "./ForgotPasswordDiv";
+import {
+  ForgotPasswordDiv,
+  LoginDiv,
+  RegistrationDiv,
+  ResetPasswordDiv,
+} from "./LoginElements";
 
 export const Login = () => {
   const [toggle, setToggle] = useState("login");
@@ -32,14 +35,18 @@ export const Login = () => {
 
       <div className="login-logic">
         {toggle === "login" ? (
-          <LoginDiv loginBtnClick={(e)=>setToggle(e)} />
+          <LoginDiv loginBtnClick={(e) => setToggle(e)} />
         ) : toggle === "reset" ? (
           <ResetPasswordDiv resetBtnClick={(e) => setToggle(e)} />
+        ) : toggle === "registration" ? (
+          <RegistrationDiv registrationBtnClick={(e) => setToggle(e)} />
         ) : (
           <ForgotPasswordDiv forgotBtnClick={(e) => setToggle(e)} />
         )}
-        <div className="privacy-policy">
-          <Link to="/">Privacy Policy</Link>
+        <div className="policy">
+          <div className="privacy-policy">
+            <Link to="/">Privacy Policy</Link>
+          </div>
         </div>
       </div>
     </div>

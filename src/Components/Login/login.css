@@ -32,22 +32,23 @@
   box-sizing: border-box;
   width: 576px;
   height: 100vh;
-  padding: 315px 87px 0 87px;
   background-color: #fff;
+  /* display: flex;
+  flex-direction: column; */
 }
 .lostpwd {
   color: #000;
   background: none;
   border: none;
 }
-.privacy-policy {
-  margin-top: 13rem;
-}
-.privacy-policy > a {
-  color: #000;
-  text-decoration: none;
-}
 
+.forgot-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 87px 0 87px;
+}
 .forgot-title {
   font-size: 26px;
   margin: 0 0 10px 0;
@@ -59,4 +60,40 @@
 .btn-none {
   background: none;
   border: none;
+}
+
+.reset-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 87px 0 87px;
+}
+.login-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 87px 0 87px;
+}
+
+.registration-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 87px 0 87px;
+}
+
+.policy {
+  width: 100%;
+  height: 0;
+}
+.privacy-policy {
+  bottom: 50px;
+  position: relative;
+}
+.privacy-policy > a {
+  color: #000;
+  text-decoration: none;
 }

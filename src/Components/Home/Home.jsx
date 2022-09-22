@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Navbar } from "./HomeElements";
+import { Searchbar } from "./HomeElements/Searchbar";
 
 export const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <Navbar />
+      <Searchbar />
+    </div>
+  );
+};
