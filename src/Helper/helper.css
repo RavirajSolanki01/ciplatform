@@ -35,35 +35,47 @@
 }
 
 /* Dropdown CSS */
-.dropdown-div {
-  /* width: 100%; */
+
+.dropdown-select {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0 10px;
   font-size: 16px;
+  font-family: "Noto Sans", sans-serif !important;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
-  color: #333;
-  width: 100%;
+  color: #414141;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("../Assets/signs/admin-arrow.png");
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: 50%;
+  padding: 1rem;
+  padding-right: 2rem;
 }
-.dropdown-btn {
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-family: "Noto Sans", sans-serif;
+/* .dropdown-select {
+} */
+.dropdown-select > option {
+  padding: 50px;
+  margin: 50px;
+}
+.dropdown-select:focus-visible {
+  outline: none;
+}
+.dropdown-div {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
 }
-.dropdown-icon-img {
-  margin-left: 5px;
-  height: 6px;
-  width: 11px;
-}
-.dropdown-items {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
+.dropdown-option {
+  padding: 50px !important;
+  margin: 50px !important;
 }

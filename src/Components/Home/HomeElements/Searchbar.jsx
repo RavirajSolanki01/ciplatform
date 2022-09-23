@@ -19,7 +19,7 @@ export const Searchbar = () => {
       </div>
 
       <div className="searchbar-items">
-        <DropDown name="country" items={dropdowndata} />
+        <DropDown name="Country" items={dropdowndata} />
       </div>
       <div className="searchbar-items">
         <DropDown name="City" items={dropdowndata} />
