@@ -32,6 +32,13 @@
   border: 2px solid #f88634;
   margin: 10px 0 20px 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.normal-btn > img {
+  margin-left: 20px;
 }
 
 /* Dropdown CSS */
@@ -78,4 +85,61 @@
 .dropdown-option {
   padding: 50px !important;
   margin: 50px !important;
+}
+
+.progressbar {
+  width: 220px;
+  height: 10px;
+  background-color: #e8e8e8;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.filled {
+  height: 10px;
+  border-radius: 5px;
+  background-color: #f88634;
+}
+.goal {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.goal > div > img {
+  height: 24px;
+  width: 24px;
+}
+.goal > div:nth-child(1) {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.goal > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+.goal > div > span {
+  margin: 0;
+  font-size: 14px;
+  padding-top: 5px;
+}
+.deadline,
+.deadline > div:nth-child(2) {
+  text-align: left;
+  display: flex;
+}
+.deadline{
+  gap: 10px;
+}
+.deadline > div:nth-child(2) {
+  flex-direction: column;
+
+}
+.deadline > div:nth-child(2)>span:nth-child(1) {
+  font-size: 18px;
+  font-weight: bold;
+}
+.deadline > div:nth-child(2)>span:nth-child(2) {
+  font-size: 14px;
 }
