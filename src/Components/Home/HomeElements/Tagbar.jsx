@@ -13,6 +13,7 @@ export const Tagbar = () => {
     <div
       className="tagbar"
       style={{ display: `${tags.length === 0 && "none"}` }}
+      data-testid="tagbar"
     >
       {tags &&
         tags.map((tag) => {

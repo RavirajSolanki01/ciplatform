@@ -5,7 +5,7 @@ import "./homelements.css";
 
 export const Missionbar = () => {
   return (
-    <div className="missionbar">
+    <div className="missionbar"  data-testid="missionbar" >
       <span className="mission-span">
         Explore{" "}
         <span>

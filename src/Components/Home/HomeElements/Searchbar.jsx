@@ -5,7 +5,7 @@ import "./homelements.css";
 
 export const Searchbar = () => {
   return (
-    <div className="searchbar">
+    <div className="searchbar"  data-testid="searchbar" >
       <div className="search-div">
         <img
           src={require("../../../Assets/signs/search.svg").default}

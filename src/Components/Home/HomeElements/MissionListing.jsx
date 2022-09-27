@@ -6,16 +6,16 @@ import { Rating } from "../../../Helper/Rating";
 import "./homelements.css";
 
 export const MissionListing = () => {
-  [...Array(3)].map((x) => console.log("RUNS"));
-
   return (
-    <div className="mission-listing-main">
+    <div className="mission-listing-main"  data-testid="mission-listing" >
       {listData.map(
         ({
           id,
           theme,
           isApplied,
+          paragraph,
           isFavourite,
+          title,
           location,
           thumbnail,
           btnName,
@@ -25,7 +25,23 @@ export const MissionListing = () => {
         }) => {
           return (
             <div key={id} className="mission-listing-div">
-              <div className="mission-listing-location">
+              <div
+                className="mission-listing-location"
+                style={{
+                  justifyContent: `${
+                    isApplied === "applied" || isApplied === "closed"
+                      ? "space-between"
+                      : "flex-end"
+                  }`,
+                }}
+              >
+                {isApplied === "applied" ? (
+                  <div>APPLIED</div>
+                ) : isApplied === "closed" ? (
+                  <div>CLOSED</div>
+                ) : (
+                  ""
+                )}
                 <button>
                   <img
                     src={require("../../../Assets/signs/location.svg").default}
@@ -36,16 +52,23 @@ export const MissionListing = () => {
               </div>
               <div className="mission-listing-favourite">
                 <button>
-                  <img
-                    src={require("../../../Assets/signs/heart.png")}
-                    alt=""
-                  />
+                  {isFavourite ? (
+                    <img
+                      src={require("../../../Assets/signs/heart.svg").default}
+                      alt=""
+                    />
+                  ) : (
+                    <img
+                      src={require("../../../Assets/signs/heart1.svg").default}
+                      alt=""
+                    />
+                  )}
                 </button>
               </div>
               <div className="mission-listing-share">
                 <button>
                   <img
-                    src={require("../../../Assets/signs/add1.png")}
+                    src={require("../../../Assets/signs/share.svg").default}
                     alt=""
                   />
                 </button>
@@ -58,9 +81,7 @@ export const MissionListing = () => {
                 />
               </div>
               <span className="theme">{theme}</span>
-              <p className="listing-title">
-                Grow Trees – On the path to environment sustainability
-              </p>
+              <p className="listing-title">{title}</p>
               <p
                 className={`${
                   btnName === "Apply"
@@ -68,13 +89,7 @@ export const MissionListing = () => {
                     : "listing-long-description"
                 }`}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Deserunt nesciunt dicta nam nulla autem dolore
-                recusandae laboriosam alias rem itaque?
+                {paragraph}
               </p>
               <div className="organisation-div">
                 <p>Oranisation Lorem</p>
@@ -143,8 +158,11 @@ export const MissionListing = () => {
                               />
                             </div>
                             <div>
-                              <Progressbar percent={8000} total={10000} />
-                              <span>8000</span>
+                              <Progressbar
+                                percent={deadline.achieved}
+                                total={deadline.total}
+                              />
+                              <span>{deadline.achieved}</span>
                             </div>
                           </div>
                         )}

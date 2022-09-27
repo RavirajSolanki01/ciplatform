@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { Login } from "../Components/Login/Login";
+import { Login } from "../../Components/Login/Login";
+
 
 describe("Login test", () => {
   const MockLogin = () => {
@@ -10,7 +11,11 @@ describe("Login test", () => {
       </BrowserRouter>
     );
   };
-
+  test("Privacy policy should be present when page load", () => {
+    render(<MockLogin />);
+    const policyDiv = screen.getByText(/privacy policy/i);
+    expect(policyDiv).toBeInTheDocument();
+  });
   test("Return number of elements in Login component", () => {
     render(<MockLogin />);
     const data = screen.getAllByTestId("login").map((x) => x.childElementCount);
@@ -46,7 +51,6 @@ describe("Login test", () => {
     const loginDiv = screen.getByTestId("login-div");
     expect(loginDiv).toBeInTheDocument();
   });
-
 
   //Login div will be rendered automatically
   //Lost your password button will be clicked

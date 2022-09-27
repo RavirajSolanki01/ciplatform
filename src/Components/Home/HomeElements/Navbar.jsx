@@ -10,7 +10,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <div className="navbar">
+    <div className="navbar"  data-testid="navbar" >
       <div className="navbar-list">
         <div>
           <DropDown name="Explore" items={btnlist} />

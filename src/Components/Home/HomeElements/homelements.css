@@ -159,7 +159,8 @@
   box-sizing: border-box;
 }
 .mission-listing-location {
-  padding: 15px 15px;
+  padding: 15px 15px 15px 0;
+  justify-content: space-between;
 }
 .mission-listing-favourite {
   padding: 110px 15px 0 0;
@@ -168,6 +169,16 @@
   padding: 163px 15px 0 0;
 }
 
+.mission-listing-location > div {
+  background-color: #10aa3a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  min-width: 80px;
+  padding-left:15px;
+  border-bottom-right-radius: 17.5px;
+  border-top-right-radius: 17.5px;
+}
 .mission-listing-location > button {
   padding: 10px;
   height: 35px;
@@ -191,7 +202,11 @@
   align-items: center;
   justify-content: center;
 }
-
+.mission-listing-share > button > img,
+.mission-listing-favourite > button > img {
+  height: 70%;
+  width: 100%;
+}
 .mission-listing-main {
   display: flex;
   flex-wrap: wrap;
@@ -206,11 +221,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0 30px; */
   box-sizing: border-box;
-  /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.06);
-  /* background-color: cadetblue; */
 }
 
 .listing-block {
