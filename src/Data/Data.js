@@ -63,6 +63,7 @@ export const listData = [
     title: "Grow Trees – On the path to environment sustainability",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit Lorem ipsum dolor sit amet, consecteturadipisicing elit. Deserunt nesciunt dicta nam nulla autem dolorerecusandae laboriosam alias rem itaque?",
+    organisation: "Smith International caring foundation",
     btnName: "Apply",
     goalObject: { status: "objective", objective: "Ongoing Opportunity" },
     seats: { status: "left", count: 10 },
@@ -78,6 +79,7 @@ export const listData = [
     title: "Education Supplies for Every Pair of Shoes Sold",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit Lorem ipsum dolor sit amet, consecteturadipisicing elit. Deserunt nesciunt dicta nam nulla autem dolorerecusandae laboriosam alias rem itaque?",
+    organisation: "Smith International caring foundation",
     btnName: "View Details",
     goalObject: {
       status: "date",
@@ -97,6 +99,7 @@ export const listData = [
     title: "Nourish the Children in African country ",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit Lorem ipsum dolor sit amet, consecteturadipisicing elit. Deserunt nesciunt dicta nam nulla autem dolorerecusandae laboriosam alias rem itaque?",
+    organisation: "Smith International caring foundation",
     btnName: "Apply",
     goalObject: { status: "objective", objective: "Ongoing Opportunity" },
     seats: {},
@@ -112,6 +115,7 @@ export const listData = [
     title: "CSR initiative stands for Coffee and Farmer Equity  ",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit Lorem ipsum dolor sit amet, consecteturadipisicing elit. Deserunt nesciunt dicta nam nulla autem dolorerecusandae laboriosam alias rem itaque?",
+    organisation: "Smith International caring foundation",
     btnName: "Apply",
     goalObject: {
       status: "date",
@@ -131,6 +135,7 @@ export const listData = [
     title: "Grow Trees – On the path to environment sustainability",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit Lorem ipsum dolor sit amet, consecteturadipisicing elit. Deserunt nesciunt dicta nam nulla autem dolorerecusandae laboriosam alias rem itaque?",
+    organisation: "Smith International caring foundation",
     btnName: "Apply",
     goalObject: { status: "objective", objective: "Ongoing Opportunity" },
     seats: { status: "left", count: 10 },
@@ -146,6 +151,7 @@ export const listData = [
     title: "Education Supplies for Every Pair of Shoes Sold",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit Lorem ipsum dolor sit amet, consecteturadipisicing elit. Deserunt nesciunt dicta nam nulla autem dolorerecusandae laboriosam alias rem itaque?",
+    organisation: "Smith International caring foundation",
     btnName: "View Details",
     goalObject: {
       status: "date",
@@ -165,6 +171,7 @@ export const listData = [
     title: "Nourish the Children in African country ",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit Lorem ipsum dolor sit amet, consecteturadipisicing elit. Deserunt nesciunt dicta nam nulla autem dolorerecusandae laboriosam alias rem itaque?",
+    organisation: "Smith International caring foundation",
     btnName: "Apply",
     goalObject: { status: "objective", objective: "Ongoing Opportunity" },
     seats: {},
@@ -180,6 +187,7 @@ export const listData = [
     title: "CSR initiative stands for Coffee and Farmer Equity  ",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit Lorem ipsum dolor sit amet, consecteturadipisicing elit. Deserunt nesciunt dicta nam nulla autem dolorerecusandae laboriosam alias rem itaque?",
+    organisation: "Smith International caring foundation",
     btnName: "Apply",
     goalObject: {
       status: "date",
@@ -199,6 +207,7 @@ export const listData = [
     title: "CSR initiative stands for Coffee and Farmer Equity  ",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit Lorem ipsum dolor sit amet, consecteturadipisicing elit. Deserunt nesciunt dicta nam nulla autem dolorerecusandae laboriosam alias rem itaque?",
+    organisation: "Smith International caring foundation",
     btnName: "Apply",
     goalObject: {
       status: "date",

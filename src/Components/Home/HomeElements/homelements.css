@@ -175,7 +175,7 @@
   display: flex;
   align-items: center;
   min-width: 80px;
-  padding-left:15px;
+  padding-left: 15px;
   border-bottom-right-radius: 17.5px;
   border-top-right-radius: 17.5px;
 }
@@ -240,21 +240,22 @@
   background-color: #fff;
   font-size: 16px;
   position: relative;
-  top: -20px;
+  top: -10px;
 }
 .listing-title {
   font-size: 26px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.31;
+  line-height: 1.16;
   text-align: left;
   color: #414141;
   margin: 0;
-  margin-top: -15px;
+  margin-top: 30px;
   padding: 0 30px;
 }
 .listing-short-description {
+  /* margin: 14px 0 20px 0; */
   font-size: 15px;
   font-weight: 300;
   font-stretch: normal;
@@ -262,7 +263,6 @@
   text-align: left;
   color: #757575;
   padding: 0 30px;
-
   height: 40px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -287,7 +287,7 @@
   text-align: left;
   padding: 0 30px;
   box-sizing: border-box;
-  margin-bottom: 27px;
+  /* margin-bottom: 27px; */
 }
 .organisation-div > p {
   margin: 0;
@@ -298,8 +298,7 @@
   padding: 5px 15px;
   border-radius: 17.5px;
   font-size: 15px;
-  position: relative;
-  margin-bottom: -15px;
+
   background-color: #fff;
 }
 .seats-div {
@@ -365,4 +364,47 @@
 }
 .apply-btn > img {
   margin-left: 15px;
+}
+
+/* ---------List view---------- */
+.imagediv {
+  height: 220px;
+}
+.mission-listing-main-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+}
+.mission-listing-div-list {
+  margin-top: 25px;
+  width: 100%;
+  height: 220px;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.06);
+}
+.mission-listing-body {
+  height: 398px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mission-listing-body-list {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  box-sizing: border-box;
+}
+.mission-dates-div {
+  position: relative;
+  top: 11px;
+}
+.footer-list {
+  display: flex;
 }
