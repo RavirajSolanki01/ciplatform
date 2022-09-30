@@ -26,10 +26,12 @@ export const MissionListing = () => {
           isApplied,
           paragraph,
           isFavourite,
+          rating,
           title,
           location,
           thumbnail,
           btnName,
+          skills,
           organisation,
           seats,
           deadline,
@@ -130,21 +132,43 @@ export const MissionListing = () => {
                       />{" "}
                       {location}
                     </span>
-                    <span>{theme}</span>
-                    <span>{organisation}</span>
+                    <span>
+                      {" "}
+                      <img
+                        src={require("../../../Assets/signs/web.png")}
+                        alt=""
+                      />{" "}
+                      {theme}
+                    </span>
+                    <span>
+                      {" "}
+                      <img
+                        src={require("../../../Assets/signs/organization.png")}
+                        alt=""
+                      />{" "}
+                      {organisation}
+                    </span>
                   </div>
                   <span>
-                    <Rating stars={3} total={5} />
+                    <Rating stars={rating.stars} total={rating.total} />
                   </span>
                 </div>
 
-                <p className="listing-title">{title}</p>
+                <p
+                  className={`${
+                    viewData === "grid" ? "listing-title" : "listing-title-list"
+                  }`}
+                >
+                  {title}
+                </p>
                 <p
                   className={`${
                     btnName === "Apply"
                       ? "listing-short-description"
                       : "listing-long-description"
-                  }`}
+                  } ${
+                    viewData === "grid" ? "" : "listing-desp-list"
+                  } listing-description `}
                 >
                   {paragraph}
                 </p>
@@ -152,91 +176,146 @@ export const MissionListing = () => {
                   className="organisation-div"
                   style={{ display: `${viewData === "list" ? "none" : ""}` }}
                 >
-                  <p>{organisation}</p>
+                  <p className="">{organisation}</p>
                   <span>
-                    <Rating stars={3} total={5} />
+                  <Rating stars={rating.stars} total={rating.total} />
                   </span>
                 </div>
 
                 {/* nnnnnnnnnnnnnnnnnnnnnnnnnnnn */}
-                <div className={`${viewData ==="list"&&"footer-list"}`}   >
-                  {btnName === "Apply" && Object.keys(goalObject).length !== 0 && (
-                    <div className="mission-dates-div">
-                      <span className="mission-dates">
-                        {goalObject.status === "objective"
-                          ? goalObject.objective
-                          : `From ${goalObject.startDate} untill ${goalObject.endDate}`}
-                      </span>
-                    </div>
-                  )}
 
-                  {btnName === "Apply" && (
-                    <div className="seats-div">
-                      {Object.keys(seats).length !== 0 && (
-                        <div className="seats-div-left">
-                          <div>
-                            {seats.status === "left" ? (
+                <div className={`${viewData === "list" && "footer-list"}`}>
+                  <div
+                    className={`${
+                      viewData === "grid" ? "" : "left-footer-list"
+                    }`}
+                  >
+                    {btnName === "Apply" && (
+                      <div
+                        style={{
+                          display: `${viewData === "grid" ? "none" : ""}`,
+                        }}
+                        className="skills-list"
+                      >
+                        <div>
+                          <img
+                            src={require("../../../Assets/signs/skills.png")}
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          Skills
+                          <span>{skills}</span>
+                        </div>
+                      </div>
+                    )}
+
+                    {btnName === "Apply" &&
+                      Object.keys(goalObject).length !== 0 && (
+                        <div
+                          className={`${
+                            viewData === "grid"
+                              ? "mission-dates-div"
+                              : "mission-dates-div-list"
+                          }`}
+                        >
+                          <span className="mission-dates">
+                            {viewData === "grid" ? (
+                              ""
+                            ) : goalObject.status === "date" ? (
                               <img
-                                src={require("../../../Assets/signs/Seats-left.png")}
-                                alt="done"
+                                src={require("../../../Assets/signs/calender.png")}
+                                alt=""
                               />
                             ) : (
-                              <img
-                                src={require("../../../Assets/signs/Already-volunteered.png")}
-                                alt="done"
-                              />
+                              ""
                             )}
-                          </div>
-                          <div className="already-volunteered">
-                            <span>{seats.count}</span>
-                            <p>
-                              {seats.status === "left"
-                                ? "Seats left"
-                                : "Already volunteered"}
-                            </p>
-                          </div>
+
+                            {goalObject.status === "objective"
+                              ? goalObject.objective
+                              : `From ${goalObject.startDate} untill ${goalObject.endDate}`}
+                          </span>
                         </div>
                       )}
-                      <div>
-                        {Object.keys(deadline).length !== 0 && (
-                          <div>
-                            {deadline.status === "deadline" ? (
-                              <div className="deadline">
-                                <div>
-                                  <img
-                                    src={require("../../../Assets/signs/deadline.png")}
-                                    alt="mission"
-                                  />
-                                </div>
-                                <div>
-                                  <span>{deadline.date}</span>
-                                  <span>Deadline</span>
-                                </div>
-                              </div>
-                            ) : (
-                              <div className="goal">
-                                <div>
-                                  <img
-                                    src={require("../../../Assets/signs/mission.png")}
-                                    alt="mission"
-                                  />
-                                </div>
-                                <div>
-                                  <Progressbar
-                                    percent={deadline.achieved}
-                                    total={deadline.total}
-                                  />
-                                  <span>{deadline.achieved}</span>
-                                </div>
-                              </div>
-                            )}
+
+                    {btnName === "Apply" && (
+                      <div
+                        className={`${
+                          viewData === "grid" ? "seats-div" : "seats-div-list"
+                        }`}
+                      >
+                        {Object.keys(seats).length !== 0 && (
+                          <div className="seats-div-left">
+                            <div>
+                              {seats.status === "left" ? (
+                                <img
+                                  src={require("../../../Assets/signs/Seats-left.png")}
+                                  alt="done"
+                                />
+                              ) : (
+                                <img
+                                  src={require("../../../Assets/signs/Already-volunteered.png")}
+                                  alt="done"
+                                />
+                              )}
+                            </div>
+                            <div className="already-volunteered">
+                              <span>{seats.count}</span>
+                              <p>
+                                {seats.status === "left"
+                                  ? "Seats left"
+                                  : "Already volunteered"}
+                              </p>
+                            </div>
                           </div>
                         )}
+                        <div>
+                          {Object.keys(deadline).length !== 0 && (
+                            <div>
+                              {deadline.status === "deadline" ? (
+                                <div className="deadline">
+                                  <div>
+                                    <img
+                                      src={require("../../../Assets/signs/deadline.png")}
+                                      alt="mission"
+                                    />
+                                  </div>
+                                  <div>
+                                    <span>{deadline.date}</span>
+                                    <span>Deadline</span>
+                                  </div>
+                                </div>
+                              ) : (
+                                <div className="goal">
+                                  <div>
+                                    <img
+                                      src={require("../../../Assets/signs/mission.png")}
+                                      alt="mission"
+                                    />
+                                  </div>
+                                  <div>
+                                    <Progressbar
+                                      percent={deadline.achieved}
+                                      total={deadline.total}
+                                    />
+                                    <span>{deadline.achieved}</span>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  )}
-
-                  <div className="listing-footer">
+                    )}
+                  </div>
+                  {/* ---------------------------------------- */}
+                  <div
+                    className={`${
+                      viewData === "grid"
+                        ? "listing-footer"
+                        : "listing-footer-list"
+                    }`}
+                  >
                     <NormalButton
                       name={btnName}
                       isArrow={true}

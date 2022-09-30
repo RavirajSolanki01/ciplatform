@@ -1,3 +1,10 @@
+.home-main{
+  height: 100vh;
+  box-sizing: border-box;
+}
+.home-hero{
+  
+}
 .pagination-div {
   width: 100%;
   display: flex;
@@ -60,8 +67,59 @@
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0 240px;
 }
-.main-footer>a{
-    text-decoration: none;
-    color: #414141;
-    font-size: 14px;
+.main-footer > a {
+  text-decoration: none;
+  color: #414141;
+  font-size: 14px;
+}
+.cookies {
+  position: fixed;
+  bottom: 0;
+  background-color: black;
+  width: 100%;
+  height: 150px;
+  opacity: 0.9;
+  padding: 0 240px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cookies > div > p {
+  color: #fefefe;
+  font-size: 16px;
+  margin: 0;
+}
+.cookies>div{
+  text-align: left;
+}
+.cookies>div>a{
+  color: #f88634;
+}
+.cookie-btn {
+  width: 120px;
+  background: none;
+  /* width: 100%; */
+  height: 48px;
+  border-radius: 24px;
+  font-size: 17px;
+  color: #f88634;
+  border: 2px solid #f88634;
+  margin: 10px 0 20px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cookie-close-btn{
+  position: absolute;
+  right: 20px;
+  bottom: 115px;
+}
+.cookie-close-btn>button{
+  background: none;
+  border: none;
+}
+.no-mission{
+  height: 100%;
 }

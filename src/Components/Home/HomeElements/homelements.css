@@ -77,7 +77,7 @@
 .tagbar {
   display: flex;
   gap: 10px;
-  padding: 20px 0 40px 0;
+  padding: 20px 0 0 0;
   flex-wrap: wrap;
 }
 .tag-btn {
@@ -103,6 +103,7 @@
 .missionbar {
   display: flex;
   justify-content: space-between;
+  margin-top: 40px;
 }
 .mission-span {
   font-size: 24px;
@@ -135,11 +136,15 @@
   color: #414141;
 }
 .mission-grid-btn {
-  background-color: #e8e8e8;
+  /* background-color: #e8e8e8; */
+  background: transparent;
   border: none;
   border-radius: 50%;
   height: 48px;
   width: 48px;
+}
+.active-view {
+  background-color: #e8e8e8;
 }
 .bg-none {
   background: none;
@@ -254,8 +259,7 @@
   margin-top: 30px;
   padding: 0 30px;
 }
-.listing-short-description {
-  /* margin: 14px 0 20px 0; */
+.listing-description {
   font-size: 15px;
   font-weight: 300;
   font-stretch: normal;
@@ -263,31 +267,25 @@
   text-align: left;
   color: #757575;
   padding: 0 30px;
-  height: 40px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.listing-short-description {
+  height: 40px;
+}
 .listing-long-description {
-  font-size: 15px;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  text-align: left;
-  color: #757575;
-  padding: 0 30px;
   height: 100px;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .organisation-div {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: 10px;
   flex-wrap: wrap;
   text-align: left;
   padding: 0 30px;
   box-sizing: border-box;
-  /* margin-bottom: 27px; */
 }
 .organisation-div > p {
   margin: 0;
@@ -298,7 +296,7 @@
   padding: 5px 15px;
   border-radius: 17.5px;
   font-size: 15px;
-
+  width: 100%;
   background-color: #fff;
 }
 .seats-div {
@@ -309,11 +307,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 .seats-div-left {
+  min-width: 100px;
   display: flex;
   justify-content: flex-star;
   align-items: center;
@@ -397,6 +394,7 @@
   height: 100%;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   padding: 15px 0;
   box-sizing: border-box;
@@ -405,6 +403,99 @@
   position: relative;
   top: 11px;
 }
+.listing-title-list {
+  text-align: left;
+  padding: 0 30px;
+  margin: 0;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #414141;
+}
+
+.listing-desp-list {
+  height: 20px;
+  margin-top: 0;
+}
+.left-footer-list {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 20px;
+}
 .footer-list {
   display: flex;
+  padding: 0 30px;
+  align-items: flex-end;
+}
+.listing-footer-list {
+  /* height: 0; */
+  /* height: 92px; */
+
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
+}
+.seats-div-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.seats-div-list .already-volunteered > span {
+  /* color: red; */
+  font-weight: normal;
+  font-size: 16px !important;
+}
+
+.mission-dates-div-list {
+  text-align: left;
+  min-width: 175px;
+}
+.mission-dates-div-list > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+}
+.organisation-div > div {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 20px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+.organisation-div > div > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.organisation-div > div > span > img {
+  width: 20px;
+}
+.skills-list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.skills-list > div > img {
+  width: 20px;
+}
+.skills-list > div:nth-child(1) {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.deadline > div:nth-child(2) > span {
+  font-weight: normal !important;
+  font-size: 16px !important;
 }
