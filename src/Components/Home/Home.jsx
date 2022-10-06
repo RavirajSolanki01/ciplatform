@@ -16,42 +16,47 @@ export const Home = () => {
   };
 
   return (
-    <div className="home-main" >
-      <Navbar />
-      <Searchbar />
+    <div className="home-main">
+      <div>
+        <Navbar />
+        <Searchbar />
+      </div>
       <div className="home-hero" style={{ padding: "0 240px" }}>
-        {true ? (
+        {!true ? (
           <>
             <Tagbar />
             <Missionbar />
             <MissionListing />
             <div className="pagination-div">
-          <div>
-            <button>{"<<"}</button>
+              <div>
+                <button>{"<<"}</button>
+              </div>
+              <ReactPaginate
+                previousLabel="<"
+                nextLabel=">"
+                pageCount={5}
+                initialPage={0}
+                className="pagination"
+                nextClassName="next"
+                nextLinkClassName="next-link"
+                previousClassName="previous-class"
+                previousLinkClassName="previous-link"
+                pageClassName="page"
+                activeClassName="active-page"
+                pageLinkClassName="page-link"
+                activeLinkClassName="active-link-page"
+              />
+              <div>
+                <button>{">>"}</button>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="no-mission">
+            No mission found
+            <NormalButton isArrow name="Submit your mission" />
           </div>
-          <ReactPaginate
-            previousLabel="<"
-            nextLabel=">"
-            pageCount={5}
-            initialPage={0}
-            className="pagination"
-            nextClassName="next"
-            nextLinkClassName="next-link"
-            previousClassName="previous-class"
-            previousLinkClassName="previous-link"
-            pageClassName="page"
-            activeClassName="active-page"
-            pageLinkClassName="page-link"
-            activeLinkClassName="active-link-page"
-          />
-          <div>
-            <button>{">>"}</button>
-          </div>
-        </div>
-          </>):<div className="no-mission" >No mission foiund</div>
-        }
-
-        
+        )}
       </div>
       <div className="main-footer">
         <Link to="/">Privacy Policy</Link>
