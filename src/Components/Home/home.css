@@ -129,8 +129,13 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  align-items: center;
   padding-top: 5rem;
   font-size: 22px;
   font-weight: bold;
   box-sizing: border-box;
+}
+.no-mission > button {
+  width: auto;
+  padding: 22px;
 }

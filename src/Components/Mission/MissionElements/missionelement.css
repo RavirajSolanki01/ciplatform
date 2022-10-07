@@ -1,0 +1,61 @@
+.mission-carousel {
+  display: flex;
+}
+.preview-carousel-outer-div {
+  height: 625px;
+  width: 625px;
+}
+.preview-carousel {
+  height: 625px;
+  width: 625px;
+}
+.mission-carousel-div {
+  height: 120px;
+  width: 155px;
+}
+.mission-carousel-div > img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.srrrc{
+    height: 514px;
+    width: 514px;
+
+}
+
+.mission-slider {
+  /* background-color: black; */
+}
+
+.mission-slider > button::before {
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+  width: 20px;
+  height: 10px;
+  background-color: black;
+  right: 0;
+  height: 100%;
+  z-index: 19;
+}
+
+.mission-slider > button:nth-child(1){
+  
+  z-index: 9;
+}
+
+.mission-slider > .slick-prev {
+  height: 100%;
+  width: 20px;
+  left: 0;
+}
+.mission-slider > .slick-next {
+  height: 100%;
+  width: 20px;
+  right: 0;
+
+
+}
