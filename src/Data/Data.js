@@ -295,3 +295,11 @@ export const listData = [
     deadline: { status: "goal", achieved: 8000, total: 10000 },
   },
 ];
+
+export const missionTabs = ["Mission", "Organization", "Sponsored", "Comments"];
+
+export const privacyPoints = [
+  "Introduction",
+  "How does use cookies?",
+  "How to manage your cookie preferences?",
+];

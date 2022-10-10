@@ -2,7 +2,6 @@
   display: flex;
 }
 .preview-carousel-outer-div {
-  height: 625px;
   width: 625px;
 }
 .preview-carousel {
@@ -19,10 +18,9 @@
   width: 100%;
 }
 
-.srrrc{
-    height: 514px;
-    width: 514px;
-
+.srrrc {
+  height: 514px;
+  width: 514px;
 }
 
 .mission-slider {
@@ -42,8 +40,7 @@
   z-index: 19;
 }
 
-.mission-slider > button:nth-child(1){
-  
+.mission-slider > button:nth-child(1) {
   z-index: 9;
 }
 
@@ -56,6 +53,19 @@
   height: 100%;
   width: 20px;
   right: 0;
-
-
+}
+.mission-tabs {
+  list-style: none;
+  display: flex;
+}
+.mission-tabs > li {
+  padding: 22px;
+  border-bottom: 3px solid white;
+  font-size: 16px;
+  color: #757575;
+}
+.active-tab {
+  border-bottom: 3px solid black !important;
+  font-weight: bold;
+  color: #414141 !important;
 }
