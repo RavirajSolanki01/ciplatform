@@ -150,7 +150,7 @@ export const MissionListing = () => {
                     </span>
                   </div>
                   <span>
-                    <Rating stars={rating.stars} total={rating.total} />
+                    <Rating stars={rating.stars} total={rating.total} key={id} />
                   </span>
                 </div>
 

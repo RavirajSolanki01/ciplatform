@@ -12,17 +12,18 @@ export const Rating = ({ stars, total }) => {
   }
 
   return (
-    <div>
-      {arr.map((x) => {
+    <>
+      {arr.map((x, key) => {
         return x === "star" ? (
           <img
+            key={key}
             src={require("../Assets/signs/selected-star.png")}
             alt="selected"
           />
         ) : (
-          <img src={require("../Assets/signs/star.png")} alt="star" />
+          <img key={key} src={require("../Assets/signs/star.png")} alt="star" />
         );
       })}
-    </div>
+    </>
   );
 };

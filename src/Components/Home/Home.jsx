@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { NormalButton } from "../../Helper";
 import { setCookieBtnStatus } from "../../Redux/cookieReducer";
+import { Footer } from "../Footer/Footer";
 import "./home.css";
 import { Missionbar, Navbar, Searchbar, Tagbar } from "./HomeElements";
 import { MissionListing } from "./HomeElements/MissionListing";
@@ -22,7 +23,7 @@ export const Home = () => {
         <Searchbar />
       </div>
       <div className="home-hero" style={{ padding: "0 240px" }}>
-        {!true ? (
+        {true ? (
           <>
             <Tagbar />
             <Missionbar />
@@ -52,16 +53,14 @@ export const Home = () => {
             </div>
           </>
         ) : (
-          <div className="no-mission">
-            No mission found
-            <NormalButton isArrow name="Submit your mission" />
+          <div>
+            <div className="no-mission">
+              No mission found
+              <NormalButton isArrow name="Submit your mission" />
+            </div>
           </div>
         )}
       </div>
-      <div className="main-footer">
-        <Link to="/">Privacy Policy</Link>
-      </div>
-
       <div
         className="cookies"
         style={{
@@ -87,6 +86,7 @@ export const Home = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

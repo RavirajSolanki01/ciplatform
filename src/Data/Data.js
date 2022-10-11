@@ -299,7 +299,16 @@ export const listData = [
 export const missionTabs = ["Mission", "Organization", "Sponsored", "Comments"];
 
 export const privacyPoints = [
-  "Introduction",
-  "How does use cookies?",
-  "How to manage your cookie preferences?",
+  {
+    point: "Introduction",
+    id: "#intro",
+  },
+  {
+    point: "How does use cookies?",
+    id: "#cookies",
+  },
+  {
+    point: "How to manage your cookie preferences?",
+    id: "#preferences",
+  },
 ];

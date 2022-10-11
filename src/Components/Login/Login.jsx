@@ -45,7 +45,7 @@ export const Login = () => {
         )}
         <div className="policy">
           <div className="privacy-policy">
-            <Link to="/">Privacy Policy</Link>
+            <Link to="/privacy">Privacy Policy</Link>
           </div>
         </div>
       </div>

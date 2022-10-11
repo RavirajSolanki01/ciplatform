@@ -1,40 +1,54 @@
 import React from "react";
 import { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 import { privacyPoints } from "../../Data/Data";
+import { Footer } from "../Footer/Footer";
 import { Navbar } from "../Home/HomeElements";
 import "./privacyPolicy.css";
 
 export const PrivacyPolicy = () => {
-  const [active, setActive] = useState(privacyPoints[0]);
-
+  const [active, setActive] = useState(privacyPoints[0].point);
+  const handleClick = (e) => {
+    setActive(e);
+  };
   return (
     <div>
       <Navbar />
-      <div className="privacy">
+      <div className="privacy" data-testid="privacy-comp" >
         <div className="privacy-div">
           <h1 className="privacy-title">Privacy and Cookies Policy</h1>
 
           <div>
-            <div className="points-div">
+            <div className="points-div" data-testid="policy-points" >
               <ul className="privacy-points">
-                {privacyPoints.map((point) => (
-                  <li
-                    onClick={() => setActive(point)}
-                    className={point === active ? "actve-point" : undefined}
-                  >
-                    {point}
-                    <img
-                      src={require("../../Assets/signs/arrow.png")}
-                      alt="arrow"
-                    />
-                  </li>
-                ))}
+                {privacyPoints.map((id) => {
+                  console.log(id.id);
+                  return (
+                    <HashLink smooth to={id.id}>
+                      <li
+                        key={id.id}
+                        onClick={() => handleClick(id.point)}
+                        className={
+                          id.point === active ? "actve-point" : undefined
+                        }
+                      >
+                        {id.point}
+                        <img
+                          src={require("../../Assets/signs/arrow.png")}
+                          alt="arrow"
+                        />
+                      </li>
+                    </HashLink>
+                  );
+                })}
               </ul>
             </div>
 
             <div className="right-side-div">
               <div>
-                <p className="points-title">{privacyPoints[0]}</p>
+                <p className="points-title" id="intro">
+                  {privacyPoints[0].point}
+                </p>
                 <p className="points-para">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -67,7 +81,9 @@ export const PrivacyPolicy = () => {
               </div>
 
               <div>
-                <p className="points-title">{privacyPoints[1]}</p>
+                <p className="points-title" id="cookies">
+                  {privacyPoints[1].point}
+                </p>
                 <p className="points-para">
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                   accusantium doloremque laudantium, totam rem aperiam, eaque
@@ -116,7 +132,9 @@ export const PrivacyPolicy = () => {
                 </p>
               </div>
               <div>
-                <p className="points-title">{privacyPoints[1]}</p>
+                <p className="points-title" id="preferences">
+                  {privacyPoints[2].point}
+                </p>
                 <p className="points-para">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -182,7 +200,7 @@ export const PrivacyPolicy = () => {
                     do eiusmod tempor incididunt ut labore et dolore
                   </li>
                 </ol>
-                <div className="headings" >
+                <div className="headings">
                   <p>The first level heading - H1</p>
                   <p>The second level heading - H2</p>
                   <p>The third level heading - H3</p>
@@ -190,11 +208,22 @@ export const PrivacyPolicy = () => {
                   <p>The fifth level heading - H5</p>
                   <p>The sixth level heading - H6</p>
                 </div>
+                <p className="points-para">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

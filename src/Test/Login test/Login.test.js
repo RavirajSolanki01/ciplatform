@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { Login } from "../../Components/Login/Login";
-
+import PrivacyPolicy from "../../Components/Privacy";
 
 describe("Login test", () => {
   const MockLogin = () => {
@@ -65,5 +65,18 @@ describe("Login test", () => {
     fireEvent.click(resetBtn);
     const resetDiv = screen.getByTestId("reset-div");
     expect(resetDiv).toBeInTheDocument();
+  });
+
+  it("Should render Privacy page on 'Privacy Policy' button click", () => {
+    render(<MockLogin />);
+    const privacyBtn = screen.getByText(/privacy policy/i);
+    fireEvent.click(privacyBtn);
+    render(
+      <BrowserRouter>
+        <PrivacyPolicy />
+      </BrowserRouter>
+    );
+    const privacyDiv = screen.getByTestId("privacy-comp");
+    expect(privacyDiv).toBeInTheDocument();
   });
 });

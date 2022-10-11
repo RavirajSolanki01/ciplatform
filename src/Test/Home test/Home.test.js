@@ -1,12 +1,16 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { Home } from "../../Components/Home/Home";
+import Home from "../../Components/Home";
+import { store } from "../../Redux/store";
 
 describe("Home test", () => {
   const MockHome = () => {
     return (
       <BrowserRouter>
-        <Home />
+        <Provider store={store} >
+          <Home />
+        </Provider>
       </BrowserRouter>
     );
   };
