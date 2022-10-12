@@ -28,7 +28,7 @@ export const Home = () => {
             <Tagbar />
             <Missionbar />
             <MissionListing />
-            <div className="pagination-div">
+            <div className="pagination-div" data-testid="paginate">
               <div>
                 <button>{"<<"}</button>
               </div>

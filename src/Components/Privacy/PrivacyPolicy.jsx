@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { privacyPoints } from "../../Data/Data";
 import { Footer } from "../Footer/Footer";
@@ -11,26 +10,30 @@ export const PrivacyPolicy = () => {
   const handleClick = (e) => {
     setActive(e);
   };
+  useEffect(() => {
+    setActive(privacyPoints[0].point);
+  }, []);
+
   return (
-    <div>
+    <div id="privacy-page">
       <Navbar />
-      <div className="privacy" data-testid="privacy-comp" >
+      <div className="privacy" data-testid="privacy-comp">
         <div className="privacy-div">
           <h1 className="privacy-title">Privacy and Cookies Policy</h1>
 
           <div>
-            <div className="points-div" data-testid="policy-points" >
+            <div className="points-div" data-testid="policy-points">
               <ul className="privacy-points">
                 {privacyPoints.map((id) => {
-                  console.log(id.id);
                   return (
-                    <HashLink smooth to={id.id}>
+                    <HashLink smooth to={id.id} key={id}>
                       <li
                         key={id.id}
                         onClick={() => handleClick(id.point)}
                         className={
-                          id.point === active ? "actve-point" : undefined
+                          id.point === active ? "active-point" : undefined
                         }
+                        data-testid={id.id}
                       >
                         {id.point}
                         <img
@@ -45,7 +48,8 @@ export const PrivacyPolicy = () => {
             </div>
 
             <div className="right-side-div">
-              <div>
+
+              <div data-testid="intro-div" >
                 <p className="points-title" id="intro">
                   {privacyPoints[0].point}
                 </p>
@@ -80,7 +84,7 @@ export const PrivacyPolicy = () => {
                 </p>
               </div>
 
-              <div>
+              <div data-testid="cookies-div" >
                 <p className="points-title" id="cookies">
                   {privacyPoints[1].point}
                 </p>
@@ -131,7 +135,8 @@ export const PrivacyPolicy = () => {
                   nesciunt.
                 </p>
               </div>
-              <div>
+
+              <div data-testid="pref-div" >
                 <p className="points-title" id="preferences">
                   {privacyPoints[2].point}
                 </p>
@@ -219,6 +224,7 @@ export const PrivacyPolicy = () => {
                   mollit anim id est laborum.
                 </p>
               </div>
+
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ describe("Home test", () => {
   const MockHome = () => {
     return (
       <BrowserRouter>
-        <Provider store={store} >
+        <Provider store={store}>
           <Home />
         </Provider>
       </BrowserRouter>
@@ -39,5 +39,10 @@ describe("Home test", () => {
     render(<MockHome />);
     const tagbar = screen.getByTestId("tagbar");
     expect(tagbar).toBeInTheDocument();
+  });
+  test("Should render Pagination on page load", () => {
+    render(<MockHome />);
+    const paginate = screen.getByTestId("paginate");
+    expect(paginate).toBeInTheDocument();
   });
 });

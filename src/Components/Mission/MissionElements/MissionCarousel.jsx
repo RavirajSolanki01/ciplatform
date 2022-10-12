@@ -34,11 +34,11 @@ import Slider from "react-slick";
 export const MissionCarousel = () => {
   return (
     <div className="mission-carousel">
-      <div>
+      <div className="left-mission-carousel" >
         <div>
           <img
             className="srrrc"
-            src={require("../../../Assets/carousel1.png")}
+            src={require("../../../Assets/mission-pic.png")}
             alt=""
           />
         </div>
@@ -46,10 +46,11 @@ export const MissionCarousel = () => {
           <Slider
             infinite={false}
             speed={500}
-            slidesToShow={6}
+            slidesToShow={4}
             arrows
             className="mission-slider"
             cssEase=""
+
           >
             {carouselData2 &&
               carouselData2.map(({ alt, imgsrc, paragraph, title }, key) => {
@@ -71,7 +72,7 @@ export const MissionCarousel = () => {
                 <p
                   style={{
                     textAlign: "left",
-                    fontSize: "20px",
+                    fontSize: "38px",
                     fontWeight: "bold",
                   }}
                 >

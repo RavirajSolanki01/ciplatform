@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export const Footer = () => {
   return (
     <div className="main-footer" data-testid="footer" >
-      <Link to="/privacy">Privacy Policy</Link>
+      <HashLink to="/privacy/#privacy-page">Privacy Policy</HashLink>
     </div>
   );
 };
