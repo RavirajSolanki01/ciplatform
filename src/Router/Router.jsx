@@ -1,9 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "../Components/Home";
-import Login from "../Components/Login";
-import Mission from "../Components/Mission";
-import PrivacyPolicy from "../Components/Privacy";
+import { Home, Login, Mission, PrivacyPolicy } from "../Components";
 
 export const Router = () => {
   return (

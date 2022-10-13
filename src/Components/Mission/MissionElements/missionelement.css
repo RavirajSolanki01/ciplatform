@@ -9,6 +9,7 @@
   height: 625px;
   width: 625px;
 }
+
 .mission-carousel-div {
   /* height: 120px; */
   width: 155px;
@@ -83,4 +84,57 @@
 .slick-track {
   display: flex !important;
   gap: 7px;
+}
+.mission-title {
+  margin: 42px 0 0 0;
+  font-size: 38px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #414141;
+}
+.mission-subtitle {
+  display: inline-block;
+  text-align: left;
+  margin: 23px 0 0 0;
+  height: 45px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  font-size: 17px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #414141;
+}
+.mission-objective {
+  margin-top: 45px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  height: 0;
+}
+.mission-objective > span {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px 15px;
+  border-radius: 17.5px;
+  font-size: 15px;
+  position: relative;
+  top: -12px;
+  width: 100%;
+  background-color: #fff;
+}
+.mission-seates{
+  display: flex;justify-content: space-around;align-items: center;
+  height: 93px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+.fav-buttons{
+  display: flex;
+  justify-content: space-between;
 }

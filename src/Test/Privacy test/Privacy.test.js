@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import PrivacyPolicy from "../../Components/Privacy";
+import { PrivacyPolicy } from "../../Components";
 
 describe("Privacy Policy test", () => {
   const MockPrivacy = () => {

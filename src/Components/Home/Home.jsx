@@ -62,6 +62,7 @@ export const Home = () => {
         )}
       </div>
       <div
+        data-testid="cookie-agree"
         className="cookies"
         style={{
           display: `${status === "close" || status === "agree" ? "none" : ""}`,
@@ -81,7 +82,10 @@ export const Home = () => {
         />
 
         <div className="cookie-close-btn">
-          <button onClick={() => handleClick("close")}>
+          <button
+            onClick={() => handleClick("close")}
+            data-testid="close-cookies"
+          >
             <img src={require("../../Assets/signs/cancel1.png")} alt="" />
           </button>
         </div>

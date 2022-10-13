@@ -8,8 +8,7 @@ import "./homelements.css";
 
 export const MissionListing = () => {
   const viewData = useSelector((state) => state.view.value);
-  console.log(viewData, "NNNNN");
-
+  
   return (
     <div
       className={`${

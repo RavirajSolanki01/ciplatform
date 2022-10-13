@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { Login } from "../../Components/Login/Login";
-import PrivacyPolicy from "../../Components/Privacy";
+import { Login, PrivacyPolicy } from "../../Components";
+
 
 describe("Login test", () => {
   const MockLogin = () => {
