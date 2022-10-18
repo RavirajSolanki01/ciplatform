@@ -2,8 +2,13 @@ import React from "react";
 import "./missionelement.css";
 import { carouselData2, listData } from "../../../Data/Data";
 import Slider from "react-slick";
-import { Progressbar } from "../../../Helper/Progressbar";
-import { BorderButton } from "../../../Helper/BorderButton";
+import {
+  BorderButton,
+  NormalButton,
+  Progressbar,
+  Rating,
+} from "../../../Helper";
+import { InfoBox } from "../../../Helper/InfoBox";
 
 export const MissionCarousel = () => {
   return (
@@ -39,7 +44,18 @@ export const MissionCarousel = () => {
 
       <div>
         {listData.map(
-          ({ id, title, paragraph, goalObject, seats, deadline }) => {
+          ({
+            id,
+            title,
+            paragraph,
+            theme,
+            goalObject,
+            seats,
+            deadline,
+            rating,
+            location,
+            organisation,
+          }) => {
             if (id === 4) {
               return (
                 <div key={id}>
@@ -120,9 +136,38 @@ export const MissionCarousel = () => {
                       )}
                     </div>
                   </div>
-                  <div className="fav-buttons" >
+                  <div className="fav-buttons">
                     <BorderButton logo="heart" name="Add to favourite" />
-                    <BorderButton logo="co-worker" name="Recommend to a Co-Worker" />
+                    <BorderButton
+                      logo="co-worker"
+                      name="Recommend to a Co-Worker"
+                    />
+                  </div>
+                  <div className="mission-rating">
+                    <Rating
+                      stars={rating.stars}
+                      total={rating.total}
+                      key={id}
+                      isEmpty
+                    />
+                  </div>
+
+                  <div className="infobox-div">
+                    <InfoBox img="City" keyName="City" valueName={location} />
+                    <InfoBox img="Theme" keyName="Theme" valueName={theme} />
+                    <InfoBox
+                      img="Date"
+                      keyName="Date"
+                      valueName={goalObject.objective || goalObject.startDate}
+                    />
+                    <InfoBox
+                      img="Organization"
+                      keyName="Organization"
+                      valueName={organisation}
+                    />
+                  </div>
+                  <div className="mission-apply">
+                    <NormalButton isArrow name="Apply Now" />
                   </div>
                 </div>
               );

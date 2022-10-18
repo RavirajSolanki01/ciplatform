@@ -11,5 +11,19 @@ describe("Missions test", () => {
     );
   };
 
-  test("")
+  test("Navbar should render on page load", () => {
+    render(<MockMission />);
+    const navDiv = screen.getByTestId("navbar");
+    expect(navDiv).toBeInTheDocument();
+  });
+  test("Should render Searchbar on page load", () => {
+    render(<MockMission />);
+    const searchbar = screen.getByTestId("searchbar");
+    expect(searchbar).toBeInTheDocument();
+  });
+  test("Should render Searchbar on page load", () => {
+    render(<MockMission />);
+    const searchbar = screen.getByTestId("searchbar");
+    expect(searchbar).toBeInTheDocument();
+  });
 });

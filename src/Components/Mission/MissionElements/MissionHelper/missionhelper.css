@@ -1,0 +1,36 @@
+.mission-all-info {
+  display: flex;
+  flex-direction: column;
+}
+.mission-all-info > div:nth-child(3) > div {
+  display: flex;
+  gap: 15px;
+}
+.mission-points-title {
+  color: #333;
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 38px 0 28px 0;
+}
+.mission-info-btn {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 23px;
+  padding: 11px 27px 11px 25px;
+  color: #414141;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+}
+.margin-top {
+  margin-top: 38px;
+}
+.mission-card {
+  height: 618px;
+  width: 460px;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
