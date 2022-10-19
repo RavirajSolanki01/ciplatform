@@ -1,5 +1,7 @@
 import React from "react";
-import { DropDown } from "../../../Helper";
+import { useState } from "react";
+import { CustomModal, DropDown, NormalButton } from "../../../Helper";
+import { NewMissionForm } from "../../Forms";
 import "./homelements.css";
 
 export const Navbar = () => {
@@ -9,8 +11,14 @@ export const Navbar = () => {
     { name: "Item 3", link: "www.google.com" },
   ];
 
+  const [showModal, setshowModal] = useState(false);
+
+  const closeModal = () => {
+    setshowModal(true);
+  };
+
   return (
-    <div className="navbar"  data-testid="navbar" >
+    <div className="navbar" data-testid="navbar">
       <div className="navbar-list">
         <div>
           <DropDown name="Explore" items={btnlist} />
@@ -22,6 +30,11 @@ export const Navbar = () => {
       </div>
 
       <div className="navbar-profile">
+        <NormalButton
+          name="Submit new mission"
+          className="submit-navbar"
+          btnClick={closeModal}
+        />
         <img
           className="profile-img"
           src={require("../../../Assets/signs/group-32.png")}
@@ -31,6 +44,17 @@ export const Navbar = () => {
           <DropDown name="Evan Donohue" items={btnlist} />
         </div>
       </div>
+      {showModal && (
+        <CustomModal
+          title="Add New Mission"
+          closeModal={setshowModal}
+          width="580px"
+          top="214px"
+          isCloseBtn
+        >
+          <NewMissionForm />
+        </CustomModal>
+      )}
     </div>
   );
 };

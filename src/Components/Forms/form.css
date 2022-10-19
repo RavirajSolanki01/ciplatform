@@ -1,0 +1,25 @@
+.new-mission-form > form > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.mission-form-select {
+  margin-bottom: 30px;
+}
+.mission-form-title > input,
+.mission-form-description > textarea,
+.mission-form-org > input,
+.mission-form-org-detail > textarea {
+  width: 100%;
+}
+.mission-form-description > textarea,
+.mission-form-org-detail > textarea {
+  height: 120px;
+}
+
+.mission-form-title > label,
+.mission-form-description > label,
+.mission-form-org > label,
+.mission-form-org-detail > label {
+  margin-bottom: 6px;
+}

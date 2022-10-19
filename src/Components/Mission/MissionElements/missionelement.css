@@ -262,9 +262,14 @@
 .navigation-vol > button:last-child {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
+.navigation-vol>span{
+  font-size: 14px;
+  color: #414141;
+}
 .related-mission-div {
   padding-top: 79px;
 }
+
 .related-mission-div > div:first-child {
   color: #414141;
   font-size: 34px;

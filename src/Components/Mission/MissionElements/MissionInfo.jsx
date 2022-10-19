@@ -116,10 +116,13 @@ export const MissionInfo = () => {
             <button onClick={() => handleClick(-1)}>
               <img src={require("../../../Assets/signs/left.png")} alt="" />
             </button>
-            {indexOfFirstPost + 1}&nbsp;-&nbsp;
-            {postsPerPage !== currentPosts.length
-              ? indexOfLastPost - currentPosts.length
-              : indexOfLastPost}
+            <span>
+              {indexOfFirstPost + 1}&nbsp;-&nbsp;
+              {postsPerPage !== currentPosts.length
+                ? indexOfLastPost - currentPosts.length + 1
+                : indexOfLastPost}{" "}
+              of {posts.length} Recent Volunteers
+            </span>
             <button onClick={() => handleClick(+1)}>
               <img src={require("../../../Assets/signs/arrow.png")} alt="" />
             </button>
