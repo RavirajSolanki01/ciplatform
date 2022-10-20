@@ -9,8 +9,20 @@
 .mission-form-title > input,
 .mission-form-description > textarea,
 .mission-form-org > input,
-.mission-form-org-detail > textarea {
+.mission-form-org-detail > textarea,
+.mission-form-start > input,
+.mission-form-end > input,
+.mission-total-seates > input,
+.mission-registration-deadline > input {
   width: 100%;
+}
+.mission-form-title > input,
+.mission-form-org > input,
+.mission-form-start > input,
+.mission-form-end > input,
+.mission-total-seates > input,
+.mission-registration-deadline > input {
+  height: 38px;
 }
 .mission-form-description > textarea,
 .mission-form-org-detail > textarea {
@@ -20,6 +32,26 @@
 .mission-form-title > label,
 .mission-form-description > label,
 .mission-form-org > label,
-.mission-form-org-detail > label {
+.mission-form-org-detail > label,
+.mission-form-start > label,
+.mission-form-end > label,
+.mission-total-seates > label,
+.mission-registration-deadline > label {
   margin-bottom: 6px;
+}
+.submit-form-btn {
+  border: solid 2px #f88634;
+  color: #f88634;
+  height: 48px;
+  width: 109px;
+}
+.cancel-form-btn {
+  height: 48px;
+  width: 119px;
+  border: 2px solid #757575;
+  color: #757575;
+}
+.submit-form-div{
+  display: flex;
+  gap: 10px;
 }

@@ -1,12 +1,19 @@
 .normal {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   text-align: left;
   font-size: 16px;
   margin-bottom: 20px;
 }
 .normal > label {
   margin-bottom: 10px;
+}
+.normal-date {
+  background-image: url(../Assets/signs/calender.png);
+  background-repeat: no-repeat;
+  background-position: 473px 6px;
+  background-size: 23px 21px;
 }
 .normal > input,
 .normal > textarea {
@@ -16,23 +23,83 @@
   height: 56px;
   padding: 15px 20px;
 }
-
-.normal > input:focus,
-.normal > textarea:focus {
+.normal-select > select> option {
+  color: #757575;
+  height: 2rem;
+  padding: 1rem;
+}
+.normal-select>select{
+  color: #757575;
+}
+/* .normal > input:focus, */
+.normal > input,
+.normal > textarea,
+.normal-date,
+.normal-select > select {
   outline: none;
-  border: 1px solid #2b64b1;
   border-radius: 3px;
+  box-shadow: 1px 0.3px 3px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px #d9d9d9;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url("../Assets/signs/calender.png") no-repeat;
+  background-size: 23px 21px;
+  border-width: thin;
+}
+.upload-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+.upload-input > label {
+  margin-bottom: 10px;
+}
+.upload-input > button {
+  height: 120px;
+  width: 100%;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 14px;
+  color: #414141;
+  font-family: "Noto Sans", sans-serif !important;
+  border-radius: 3px;
+  box-shadow: 1px 0.3px 3px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px #d9d9d9;
+}
+.upload-input > span {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #737373;
+}
+
+.preview-img {
+  height: 100%; /* object-fit: contain; */
+  width: 100%;
+  object-fit: contain;
 }
 
 .normal-btn {
-  background: none;
-  width: 100%;
   height: 48px;
-  border-radius: 24px;
-  font-size: 17px;
   color: #f88634;
   border: 2px solid #f88634;
   margin: 10px 0 20px 0;
+}
+.normal-btn-common {
+  width: 100%;
+  background: none;
+  border-radius: 24px;
+  font-size: 17px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -48,6 +115,7 @@
   flex-direction: column;
   width: 100%;
   text-align: left;
+  align-items: flex-start;
 }
 .normal-select > label {
   margin-bottom: 6px;

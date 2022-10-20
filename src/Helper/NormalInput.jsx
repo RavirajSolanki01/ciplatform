@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useRef } from "react";
 import "./helper.css";
 
 export const NormalInput = ({
@@ -10,16 +11,39 @@ export const NormalInput = ({
   inputType = "input",
   placeholder,
 }) => {
+  const ref = useRef();
+  const [first, setfirst] = useState("blur");
+
   return (
     <div className={className ? `${className} normal` : "normal"}>
       <label htmlFor={htmlfor}>{label}</label>
       {inputType === "input" ? (
         <input
+          className={
+            type === "date" && first === "blur" ? "normal-date" : undefined
+          }
           data-testid="normal-input"
-          type={type}
+          type={type === "date" ? "text" : type}
           name={name}
           id={htmlfor}
           placeholder={placeholder}
+          ref={ref}
+          onFocus={
+            type === "date"
+              ? () => {
+                  ref.current.type = "date";
+                  setfirst("focus");
+                }
+              : undefined
+          }
+          onBlur={
+            type === "date"
+              ? () => {
+                  setfirst("blur");
+                  ref.current.type = "text";
+                }
+              : undefined
+          }
         />
       ) : inputType === "textarea" ? (
         <textarea
