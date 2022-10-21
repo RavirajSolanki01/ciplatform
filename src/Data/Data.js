@@ -365,7 +365,6 @@ export const volunteers = [
   { name: "Travis Steen", img: "volunteer6.png" },
 ];
 
-
 export const relatedMission = [
   {
     id: 1,
@@ -420,4 +419,89 @@ export const relatedMission = [
     goalObject: { status: "objective", objective: "Ongoing Opportunity" },
     seats: { status: "left", count: 10 },
     deadline: { status: "deadline", date: "09/01/2019" },
-  }]
+  },
+];
+
+export const storyCardData = [
+  {
+    thumbnail: "story2.png",
+    theme: "Customer Experience",
+    title: "10 User and Customer Engagement strategies for 2019",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore",
+    person_img: "volunteer1.png",
+    person_name: "Andrew johnson",
+  },
+  {
+    thumbnail: "story2.png",
+    theme: "Updates",
+    title: "Overheadrd in Product: Good Products, the End of Failur.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore",
+    person_img: "volunteer3.png",
+    person_name: "Charles vigue",
+  },
+  {
+    thumbnail: "story2.png",
+    theme: "Customer Experience",
+    title: "10 User and Customer Engagement strategies for 2019",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore",
+    person_img: "volunteer1.png",
+    person_name: "Andrew johnson",
+  },
+  {
+    thumbnail: "story2.png",
+    theme: "Updates",
+    title: "Overheadrd in Product: Good Products, the End of Failur.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore",
+    person_img: "volunteer3.png",
+    person_name: "Charles vigue",
+  },
+  {
+    thumbnail: "story2.png",
+    theme: "Customer Experience",
+    title: "10 User and Customer Engagement strategies for 2019",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore",
+    person_img: "volunteer1.png",
+    person_name: "Andrew johnson",
+  },
+  {
+    thumbnail: "story2.png",
+    theme: "Updates",
+    title: "Overheadrd in Product: Good Products, the End of Failur.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore",
+    person_img: "volunteer3.png",
+    person_name: "Charles vigue",
+  },
+  {
+    thumbnail: "story2.png",
+    theme: "Customer Experience",
+    title: "10 User and Customer Engagement strategies for 2019",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore",
+    person_img: "volunteer1.png",
+    person_name: "Andrew johnson",
+  },
+  {
+    thumbnail: "story2.png",
+    theme: "Updates",
+    title: "Overheadrd in Product: Good Products, the End of Failur.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore",
+    person_img: "volunteer3.png",
+    person_name: "Charles vigue",
+  },
+  {
+    thumbnail: "story2.png",
+    theme: "Customer Experience",
+    title: "10 User and Customer Engagement strategies for 2019",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore",
+    person_img: "volunteer1.png",
+    person_name: "Andrew johnson",
+  },
+];

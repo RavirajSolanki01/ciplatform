@@ -1,5 +1,6 @@
-import { Home } from "./Home/Home";
+import { Home } from "./Home";
 import { Login } from "./Login/Login";
 import { Mission } from "./Mission/Mission";
 import { PrivacyPolicy } from "./Privacy/PrivacyPolicy";
-export { Home, Login, Mission, PrivacyPolicy };
+import { StoryPage } from "./Story";
+export { Home, Login, Mission, PrivacyPolicy, StoryPage };

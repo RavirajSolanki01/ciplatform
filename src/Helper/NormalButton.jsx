@@ -12,7 +12,12 @@ export const NormalButton = ({ name, btnClick, isArrow, className, type }) => {
       >
         {name}
         {isArrow && (
-          <img src={require("../Assets/signs/right-arrow.png")} alt="arrow" />
+          <img
+            src={require(`../Assets/signs/${
+              isArrow === "white" ? "arrow-white" : "right-arrow"
+            }.png`)}
+            alt="arrow"
+          />
         )}
       </button>
     </>
