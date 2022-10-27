@@ -1,0 +1,80 @@
+.share-story-body {
+  padding: 58px 240px 0 240px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.share-story-title {
+  font-size: 40px;
+  text-align: left;
+  display: block;
+  color: #414141;
+  margin-bottom: 39px;
+}
+.share-story-form-top {
+  display: flex;
+  gap: 30px;
+}
+
+.share-story-title-input,
+.share-story-date,
+.share-story-video-url {
+  width: 100%;
+}
+.share-story-title-input > input,
+.share-story-date > input,
+.share-story-video-url > input {
+  height: 38px;
+  width: 100%;
+}
+.share-story-select-mission > label,
+.share-story-title-input > label,
+.share-story-date > label,
+.share-story-video-url > label {
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #414141;
+}
+.share-story-date > input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+.share-story-quill {
+  height: 229px;
+  margin-bottom: 71px;
+}
+.share-story-quill .ql-toolbar {
+  text-align: left;
+}
+
+.share-story-upload {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.share-story-upload > button {
+  width: 100%;
+  box-shadow: 1px 0.3px 3px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px #d9d9d9;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.share-story-images {
+  padding-top: 20px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  /* gap: 20px; */
+  flex-wrap: wrap;
+}
+.share-story-images > span {
+  display: block;
+  height: 100px;
+  width: 100px;
+}
+.share-story-images > span > img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}

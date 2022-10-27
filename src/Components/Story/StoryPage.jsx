@@ -1,5 +1,6 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
+import { useNavigate } from "react-router-dom";
 import { storyCardData } from "../../Data/Data";
 import { NormalButton } from "../../Helper";
 import { Footer } from "../Footer/Footer";
@@ -8,6 +9,7 @@ import "./story.css";
 import { StoryCard } from "./StoryCard";
 
 export const StoryPage = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Navbar />
@@ -21,6 +23,7 @@ export const StoryPage = () => {
             aliquip.
           </span>
           <NormalButton
+            btnClick={() => navigate("/share-story")}
             className="story-btn"
             name="Share your Story"
             isArrow="white"

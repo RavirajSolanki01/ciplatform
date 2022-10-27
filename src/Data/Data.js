@@ -505,3 +505,44 @@ export const storyCardData = [
     person_name: "Andrew johnson",
   },
 ];
+
+
+export const modules = {
+  toolbar: [
+    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+    ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
+    [{ script: "sub" }, { script: "super" }],
+    [
+      { list: "ordered" },
+      { list: "bullet" },
+      { indent: "-1" },
+      { indent: "+1" },
+    ],
+    ["link", "image", "video", "formula"],
+    ["clean"],
+    [{ direction: "rtl" }],
+    [{ color: [] }, { background: [] }],
+    [{ font: [] }],
+    [{ align: [] }],
+  ],
+};
+
+export const formats = [
+  "header",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "script",
+  "blockquote",
+  "list",
+  "bullet",
+  "indent",
+  "link",
+  "image",
+  "direction",
+  "color",
+  "background",
+  "font",
+  "align",
+];

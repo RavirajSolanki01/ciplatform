@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CustomModal, DropDown, NormalButton } from "../../../Helper";
 import { NewMissionForm } from "../../Forms";
 import "./homelements.css";
@@ -11,6 +12,7 @@ export const Navbar = () => {
     { name: "Item 3", link: "www.google.com" },
   ];
 
+  const navigate = useNavigate();
   const [showModal, setshowModal] = useState(false);
 
   const closeModal = () => {
@@ -23,7 +25,7 @@ export const Navbar = () => {
         <div>
           <DropDown name="Explore" items={btnlist} />
         </div>
-        <div>Stories</div>
+        <div onClick={() => navigate("/story")}>Stories</div>
         <div>
           <DropDown name="Policy" items={btnlist} />
         </div>
