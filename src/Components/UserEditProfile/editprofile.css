@@ -1,0 +1,125 @@
+.edit-profile-main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 30px;
+  border-top: var(--border-line);
+  padding-top: 50px;
+}
+
+.edit-profile-left {
+  width: 330px;
+  height: 555px;
+  border: solid 1px #e8e8e8;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.edit-profile-left > img {
+  height: 180px;
+  width: 180px;
+  margin-top: 31.7px;
+}
+
+.edit-profile-left > span {
+  color: #333;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 19.3px;
+}
+.edit-profile-right {
+  width: 1080px;
+}
+
+.edit-profile-title {
+  color: #414141;
+  font-size: 22px;
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 25px;
+  border-bottom: var(--border-line);
+  display: block;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.edit-profile-title > span {
+  border-bottom: 1px solid #414141;
+  padding-bottom: 25px;
+}
+.edit-profile-title:nth-child(3),
+.edit-profile-title:nth-child(5) {
+  margin-top: 70px;
+}
+
+.edit-profile-title:nth-child(7) {
+  margin-top: 60px;
+}
+.edit-profile-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.edit-profile-input {
+  margin-bottom: 0;
+}
+.edit-profile-input > label,
+.edit-profile-textarea > label,
+.edit-profile-select > label {
+  font-size: 15px;
+  font-weight: bold;
+  color: #414141;
+}
+.edit-profile-input > input {
+  width: 525px;
+  height: 38px;
+}
+.edit-profile-textarea {
+  margin-bottom: 0;
+}
+.edit-profile-textarea > textarea {
+  width: 1080px;
+  height: 120px;
+}
+.edit-profile-select {
+  width: 525px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.edit-profile-select > select {
+  height: 38px;
+}
+.edit-profile-skills {
+  border: var(--border-line);
+  display: flex;
+  padding: 13px 15px;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.edit-profile-skills > input {
+  border: none;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+}
+
+.edit-profile-skills > span {
+  border: var(--border-line);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  
+}
+.edit-profile-skills > span > button {
+    border: none;
+    background: none;
+}
+
+.edit-profile-skills > span > div {
+width: max-content;
+}

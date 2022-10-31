@@ -28,7 +28,8 @@
 .share-story-select-mission > label,
 .share-story-title-input > label,
 .share-story-date > label,
-.share-story-video-url > label {
+.share-story-video-url > label,
+.share-story-upload > label {
   margin-bottom: 6px;
   font-size: 15px;
   color: #414141;
@@ -59,22 +60,61 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  cursor: pointer;
 }
 .share-story-images {
   padding-top: 20px;
   width: 100%;
   text-align: left;
   display: flex;
-  /* gap: 20px; */
+  gap: 30px;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .share-story-images > span {
   display: block;
   height: 100px;
   width: 100px;
+  position: relative;
 }
 .share-story-images > span > img {
   object-fit: cover;
   height: 100%;
   width: 100%;
+}
+
+.share-story-images > span > button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+}
+.share-story-images > span > button > img {
+  height: 100%;
+  width: 100%;
+}
+.submit-form-btn {
+  border: solid 2px #f88634;
+  color: #f88634;
+  height: 48px;
+  width: 109px;
+}
+.cancel-form-btn {
+  height: 48px;
+  width: 119px;
+  border: 2px solid #757575;
+  color: #757575;
+}
+.share-story-form-btns {
+  margin-bottom: 50px;
+  margin-top: 32px;
+}
+.share-story-form-btns,
+.share-story-form-btns > div {
+  display: flex;
+  justify-content: space-between;
+}
+.share-story-form-btns > div {
+  gap: 10px;
 }
