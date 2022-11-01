@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
 import "./helper.css";
 
@@ -10,6 +10,8 @@ export const NormalInput = ({
   className,
   inputType = "input",
   placeholder,
+  isDisabled,
+  value,
 }) => {
   const ref = useRef();
   const [first, setfirst] = useState("blur");
@@ -22,9 +24,12 @@ export const NormalInput = ({
           className={
             type === "date" && first === "blur" ? "normal-date" : undefined
           }
+          style={{ background: isDisabled ? "#ebe7e7" : null }}
           data-testid="normal-input"
           type={type === "date" ? "text" : type}
           name={name}
+          value={value}
+          disabled={isDisabled}
           id={htmlfor}
           placeholder={placeholder}
           ref={ref}

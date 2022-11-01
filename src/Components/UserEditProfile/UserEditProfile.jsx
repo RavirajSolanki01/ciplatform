@@ -1,33 +1,64 @@
 import React, { useState } from "react";
 import { dropdowndata } from "../../Data/Data";
-import { NormalInput, NormalSelect } from "../../Helper";
+import {
+  CustomModal,
+  NormalButton,
+  NormalInput,
+  NormalSelect,
+} from "../../Helper";
 import { Footer } from "../Footer/Footer";
 import { Navbar } from "../Home/HomeElements";
 import "./editprofile.css";
+import { ChangeProfileModal } from "./EditProfileModal/ChangeProfileModal";
+import { ContactUsModal } from "./EditProfileModal/ContactUsModal";
 
 export const UserEditProfile = () => {
   const [skills, setSkills] = useState([]);
   const [value, setValue] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [contactUs, setContatcUs] = useState(false);
 
   const deleteSkill = (e) => {
     var newData = skills.filter((skill) => skill !== e);
     setSkills(newData);
   };
 
-  const handleChange = (e) => {
-    if (e.key === "Enter") {
-      setSkills((pre) => [...pre, e.target.value]);
-      setValue("");
-    }
+  const handleChange = () => {
+    if (value) return null;
+    setSkills((pre) => [...pre, value]);
+    setValue("");
   };
 
   return (
-    <div>
+    <div data-testId="user-edit-profile-div" >
       <Navbar />
       <div className="edit-profile-main">
         <div className="edit-profile-left">
           <img src={require("../../Assets/signs/group-32.png")} alt="user" />
           <span>Evan Donohue</span>
+
+          <button onClick={() => setShowModal(true)}>Change Password</button>
+          <button onClick={() => setContatcUs(true)}>Contact Us</button>
+
+          {showModal ? (
+            <CustomModal
+              isCloseBtn
+              closeModal={() => setShowModal(false)}
+              title="Change Password"
+            >
+              <ChangeProfileModal />
+            </CustomModal>
+          ) : null}
+
+          {contactUs ? (
+            <CustomModal
+              isCloseBtn
+              closeModal={() => setContatcUs(false)}
+              title="Contact Us"
+            >
+              <ContactUsModal />
+            </CustomModal>
+          ) : null}
         </div>
         <div className="edit-profile-right">
           <span className="edit-profile-title">
@@ -113,9 +144,9 @@ export const UserEditProfile = () => {
             <NormalSelect
               htmlfor="country"
               name="Country"
-              label="Country*"
+              label="Availablity"
               items={dropdowndata}
-              placeholder="Select your country"
+              placeholder="Select your availablity"
               className="edit-profile-select"
             />
 
@@ -123,7 +154,7 @@ export const UserEditProfile = () => {
               label="LinkedIn"
               placeholder="Enter linkedIn URL"
               className="edit-profile-input"
-              htmlfor="title"
+              htmlfor="linkedin"
               type="url"
             />
           </div>
@@ -148,11 +179,20 @@ export const UserEditProfile = () => {
               : null}
             <input
               type="text"
-              onKeyUp={handleChange}
               value={value}
               onChange={(e) => setValue(e.target.value)}
               placeholder="Add your skills"
             />
+          </div>
+          <div className="edit-profile-add-div">
+            <NormalButton
+              name="Add Skills"
+              className="edit-profile-add-skills"
+              btnClick={handleChange}
+            />
+          </div>
+          <div className="edit-profile-save-div">
+            <NormalButton className="edit-profile-btn-save" name="Save" />
           </div>
         </div>
       </div>

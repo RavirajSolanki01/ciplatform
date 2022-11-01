@@ -1,11 +1,6 @@
 import React from "react";
 import { dropdowndata } from "../../Data/Data";
-import {
-  BorderButton,
-  NormalButton,
-  NormalInput,
-  NormalSelect,
-} from "../../Helper";
+import { NormalButton, NormalInput, NormalSelect } from "../../Helper";
 import { UploadInput } from "../../Helper/UploadInput";
 import "./form.css";
 
