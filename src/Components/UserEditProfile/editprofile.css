@@ -101,12 +101,16 @@
 .edit-profile-skills {
   border: var(--border-line);
   display: flex;
+  flex-direction: column;
   padding: 13px 15px;
-  align-items: center;
+  align-items: flex-start;
   gap: 5px;
   flex-wrap: wrap;
 }
-.edit-profile-skills > input {
+
+
+
+/* .edit-profile-skills > input {
   border: none;
   height: 100%;
   width: 100%;
@@ -128,7 +132,7 @@
 
 .edit-profile-skills > span > div {
   width: max-content;
-}
+} */
 .edit-profile-add-skills {
   width: 135px;
   height: 40px;
@@ -204,4 +208,53 @@
   width: 109px;
   border: solid 2px #f88634;
   color: #f88634;
+}
+
+.add-skills-modal > div:nth-child(1) {
+  display: flex;
+  gap: 20px;
+  height: 800px;
+}
+
+.add-skills-modal > div:nth-child(1) > div:nth-child(2) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 19px;
+}
+.add-skills-modal > div:nth-child(1) > div:nth-child(1) > div {
+  box-sizing: border-box;
+}
+.add-skills-modal > div:nth-child(1) > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.add-skills-modal > div:nth-child(1) > div:nth-child(1),
+.add-skills-modal > div:nth-child(1) > div:nth-child(3) {
+  width: 400px;
+  border: var(--border-line);
+  /* line-height: 2.14; */
+  padding: 20px 0 20px 0;
+}
+.each-skill {
+  height: 27px;
+  text-align: left;
+  font-size: 14px;
+  width: 100%;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.each-skill:hover {
+  background-color: #e9e9e9;
+  cursor: pointer;
+}
+.add-skill-modal-btn {
+  margin-top: 20px;
+  display: flex;
+
+  gap: 10px;
 }

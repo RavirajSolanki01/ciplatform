@@ -9,28 +9,21 @@ import {
 import { Footer } from "../Footer/Footer";
 import { Navbar } from "../Home/HomeElements";
 import "./editprofile.css";
+import { AddSkillsModal } from "./EditProfileModal/AddSkillsModal";
 import { ChangeProfileModal } from "./EditProfileModal/ChangeProfileModal";
 import { ContactUsModal } from "./EditProfileModal/ContactUsModal";
 
 export const UserEditProfile = () => {
-  const [skills, setSkills] = useState([]);
-  const [value, setValue] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [contactUs, setContatcUs] = useState(false);
-
-  const deleteSkill = (e) => {
-    var newData = skills.filter((skill) => skill !== e);
-    setSkills(newData);
-  };
-
-  const handleChange = () => {
-    if (value) return null;
-    setSkills((pre) => [...pre, value]);
-    setValue("");
-  };
+  const [skillsModal, setSkillsModal] = useState(false);
+  const [chosenSkills, setChosenSkills] = useState([
+    "Computer Science",
+    "Data Entry",
+  ]);
 
   return (
-    <div data-testId="user-edit-profile-div" >
+    <div data-testid="user-edit-profile-div">
       <Navbar />
       <div className="edit-profile-main">
         <div className="edit-profile-left">
@@ -164,31 +157,29 @@ export const UserEditProfile = () => {
           </span>
 
           <div className="edit-profile-skills">
-            {skills.length
-              ? skills.map((skill) => (
-                  <span>
-                    <div>{skill}</div>
-                    <button onClick={() => deleteSkill(skill)}>
-                      <img
-                        src={require("../../Assets/signs/cancel.png")}
-                        alt=""
-                      />
-                    </button>
-                  </span>
-                ))
-              : null}
-            <input
-              type="text"
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              placeholder="Add your skills"
-            />
+            {chosenSkills && chosenSkills.map((skill,key) => <div key={key} >{skill}</div>)}
           </div>
+          {skillsModal ? (
+            <CustomModal
+              width={906}
+              title="Add your Skills"
+              isCloseBtn
+              closeModal={() => setSkillsModal(false)}
+            >
+              <AddSkillsModal
+                chosen={chosenSkills}
+                selectedSkills={(item) => {
+                  setChosenSkills(item);
+                  setSkillsModal(false);
+                }}
+              />
+            </CustomModal>
+          ) : null}
           <div className="edit-profile-add-div">
             <NormalButton
               name="Add Skills"
               className="edit-profile-add-skills"
-              btnClick={handleChange}
+              btnClick={() => setSkillsModal(true)}
             />
           </div>
           <div className="edit-profile-save-div">
