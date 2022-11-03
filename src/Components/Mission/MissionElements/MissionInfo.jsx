@@ -43,7 +43,6 @@ export const MissionInfo = () => {
 
     fetchPosts();
   }, []);
-  console.log(posts);
 
   return (
     <div className="mission-info">

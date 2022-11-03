@@ -14,9 +14,6 @@ export const viewReducer = createSlice({
       } else {
         state.value = action.payload;
       }
-
-      console.log(state, "STATE");
-      console.log(action, "ACTION");
     },
   },
 });

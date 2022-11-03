@@ -14,7 +14,9 @@ export const UploadInput = ({
   const handleClick = (e) => {
     e.preventDefault();
     ref.current.click();
-    setFile(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length !== 0) {
+      setFile(URL.createObjectURL(e.target.files[0]));
+    }
   };
   return (
     <div className={className ? className : "upload-input"}>

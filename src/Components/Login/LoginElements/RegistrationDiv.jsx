@@ -42,7 +42,7 @@ export const RegistrationDiv = ({registrationBtnClick}) => {
       />
       <NormalButton
         name="Register"
-        btnClick={() => console.log("Register")}
+        // btnClick={() => console.log("Register")}
       />
       <button
         className="btn-none"

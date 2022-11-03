@@ -12,7 +12,7 @@ import { InfoBox } from "../../../Helper/InfoBox";
 
 export const MissionCarousel = () => {
   return (
-    <div className="mission-carousel">
+    <div className="mission-carousel" data-testid="mission-carousel" >
       <div className="left-mission-carousel">
         <div>
           <img

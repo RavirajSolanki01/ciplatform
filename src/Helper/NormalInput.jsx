@@ -52,7 +52,7 @@ export const NormalInput = ({
         />
       ) : inputType === "textarea" ? (
         <textarea
-          data-testid="normal-input"
+          data-testid="normal-textarea"
           type={type}
           name={name}
           id={htmlfor}

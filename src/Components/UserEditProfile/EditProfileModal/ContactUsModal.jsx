@@ -27,7 +27,7 @@ export const ContactUsModal = () => {
         label="Message*"
         className="contactus-modal-textarea"
         placeholder="Enter your Message"
-        htmlfor="subject"
+        htmlfor="message"
       />
       <div className="contactus-modal-btn">
         <NormalButton className="edit-modal-cancel-btn" name="Cancel" />

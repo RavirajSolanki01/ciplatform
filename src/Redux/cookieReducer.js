@@ -10,8 +10,6 @@ export const cookieReducer = createSlice({
   reducers: {
     setCookieBtnStatus: (state, action) => {
       state.value = action.payload;
-      console.log(state, "STATE");
-      console.log(action, "ACTION");
     },
   },
 });

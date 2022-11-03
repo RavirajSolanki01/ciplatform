@@ -1,12 +1,16 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { Mission } from "../../Components";
+import { store } from "../../Redux/store";
 
 describe("Missions test", () => {
   const MockMission = () => {
     return (
       <BrowserRouter>
-        <Mission />
+        <Provider store={store}>
+          <Mission />
+        </Provider>
       </BrowserRouter>
     );
   };
@@ -21,9 +25,9 @@ describe("Missions test", () => {
     const searchbar = screen.getByTestId("searchbar");
     expect(searchbar).toBeInTheDocument();
   });
-  test("Should render Searchbar on page load", () => {
-    render(<MockMission />);
-    const searchbar = screen.getByTestId("searchbar");
-    expect(searchbar).toBeInTheDocument();
-  });
+  // test("Should render Searchbar on page load", () => {
+  //   render(<MockMission />);
+  //   const searchbar = screen.getByTestId("searchbar");
+  //   expect(searchbar).toBeInTheDocument();
+  // });
 });

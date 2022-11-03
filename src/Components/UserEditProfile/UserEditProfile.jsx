@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { dropdowndata } from "../../Data/Data";
 import {
   CustomModal,
@@ -22,38 +22,79 @@ export const UserEditProfile = () => {
     "Data Entry",
   ]);
 
+  const ref = useRef();
+  const [file, setFile] = useState();
+  const handleClick = (e) => {
+    e.preventDefault();
+    ref.current.click();
+    if (e.target.files && e.target.files.length !== 0) {
+      setFile(URL.createObjectURL(e.target.files[0]));
+    }
+  };
+
   return (
     <div data-testid="user-edit-profile-div">
       <Navbar />
       <div className="edit-profile-main">
-        <div className="edit-profile-left">
-          <img src={require("../../Assets/signs/group-32.png")} alt="user" />
+        <div className="edit-profile-left" data-testid="edit-profile-left">
+          <div>
+            {!file ? (
+              <img
+                src={require("../../Assets/signs/group-32.png")}
+                alt="user"
+                className="selected-img"
+              />
+            ) : (
+              <img src={file} alt="user" className="selected-img" />
+            )}
+
+            <div className="add-img-div" onClick={handleClick}>
+              <img
+                className="add-img"
+                src={require("../../Assets/signs/add-white.png")}
+                alt="user"
+              />
+            </div>
+          </div>
+          <input
+            style={{ display: "none" }}
+            type="file"
+            name={"upload"}
+            ref={ref}
+            onChange={(e) => handleClick(e)}
+          />
           <span>Evan Donohue</span>
-
-          <button onClick={() => setShowModal(true)}>Change Password</button>
-          <button onClick={() => setContatcUs(true)}>Contact Us</button>
-
-          {showModal ? (
-            <CustomModal
-              isCloseBtn
-              closeModal={() => setShowModal(false)}
-              title="Change Password"
-            >
-              <ChangeProfileModal />
-            </CustomModal>
-          ) : null}
-
-          {contactUs ? (
-            <CustomModal
-              isCloseBtn
-              closeModal={() => setContatcUs(false)}
-              title="Contact Us"
-            >
-              <ContactUsModal />
-            </CustomModal>
-          ) : null}
+          <button
+            data-testid="change-password"
+            onClick={() => setShowModal(true)}
+          >
+            Change Password
+          </button>
+          <button data-testid="contact-us" onClick={() => setContatcUs(true)}>
+            Contact Us
+          </button>
         </div>
-        <div className="edit-profile-right">
+        {showModal ? (
+          <CustomModal
+            isCloseBtn
+            closeModal={() => setShowModal(false)}
+            title="Change Password"
+          >
+            <ChangeProfileModal />
+          </CustomModal>
+        ) : null}
+
+        {contactUs ? (
+          <CustomModal
+            isCloseBtn
+            closeModal={() => setContatcUs(false)}
+            title="Contact Us"
+          >
+            <ContactUsModal />
+          </CustomModal>
+        ) : null}
+
+        <div className="edit-profile-right" data-testid="edit-profile-right">
           <span className="edit-profile-title">
             <span>Basic Information</span>
           </span>
@@ -157,7 +198,8 @@ export const UserEditProfile = () => {
           </span>
 
           <div className="edit-profile-skills">
-            {chosenSkills && chosenSkills.map((skill,key) => <div key={key} >{skill}</div>)}
+            {chosenSkills &&
+              chosenSkills.map((skill, key) => <div key={key}>{skill}</div>)}
           </div>
           {skillsModal ? (
             <CustomModal

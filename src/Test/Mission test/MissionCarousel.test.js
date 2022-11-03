@@ -21,9 +21,11 @@ describe("Mission Carousel test", () => {
     const norBtn = screen.getByTestId("normal-btn");
     expect(norBtn).toBeInTheDocument();
   });
-  test("Mission carousel should render on page load", () => {
+  it("Mission carousel should render info-class on page load", () => {
     render(<MockMissionCarousel />);
-    const infoClass = screen.getByTestId("info-class");
-    expect(infoClass).toBeInTheDocument();
+    const infoClass = screen.getAllByTestId("infobox-div");
+    if (infoClass.length) {
+      expect(infoClass[0]).toBeInTheDocument();
+    }
   });
 });

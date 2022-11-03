@@ -6,7 +6,6 @@ import "../editprofile.css";
 export const AddSkillsModal = ({ selectedSkills, chosen }) => {
   const [addedSkills, setAddedSkills] = useState(chosen);
 
-  console.log(chosen, "LPPPL");
 
   const addSkills = (skill) => {
     if (!addedSkills.includes(skill)) {

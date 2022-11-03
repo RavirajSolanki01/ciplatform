@@ -16,8 +16,11 @@ export const ShareStory = () => {
   const handleClick = (e) => {
     e.preventDefault();
     ref.current.click();
-    setFile(URL.createObjectURL(e.target.files[0]));
-    setArr((pre) => [...pre, URL.createObjectURL(e.target.files[0])]);
+
+    if (e.target.files && e.target.files.length !== 0) {
+      setFile(URL.createObjectURL(e.target.files[0]));
+      setArr((pre) => [...pre, URL.createObjectURL(e.target.files[0])]);
+    }
   };
 
   const deletePic = (e, x) => {
@@ -60,7 +63,7 @@ export const ShareStory = () => {
               theme="snow"
               modules={modules}
               formats={formats}
-              onChange={(e) => console.log(e)}
+              // onChange={(e) => console.log(e)}
               className="share-story-quill"
             />
           </div>
@@ -76,7 +79,7 @@ export const ShareStory = () => {
 
           <div className="share-story-upload">
             <label htmlFor="upload-btn">Upload your Photos</label>
-            <button  id="upload-btn" onClick={handleClick}>
+            <button id="upload-btn" onClick={handleClick}>
               <img
                 src={require("../../Assets/signs/drag-and-drop.png")}
                 alt=""
@@ -105,14 +108,14 @@ export const ShareStory = () => {
                 ))}
             </div>
           </div>
-          <div className="share-story-form-btns" >
+          <div className="share-story-form-btns">
             <NormalButton
               type="cancel"
               name="Cancel"
               className="cancel-form-btn"
             />
             <div>
-            <NormalButton
+              <NormalButton
                 type="save"
                 name="Save"
                 className="submit-form-btn"
@@ -122,7 +125,6 @@ export const ShareStory = () => {
                 name="Submit"
                 className="submit-form-btn"
               />
-              
             </div>
           </div>
         </form>
