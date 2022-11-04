@@ -20,12 +20,13 @@ export const MissionList = ({
   organisation,
   seats,
   deadline,
-  goalObject,
+  goalObject,  
 }) => {
   const viewData = useSelector((state) => state.view.value);
 
   return (
-    <div
+    <div 
+    data-testid="all-mission-list"
       key={id}
       className={`${
         viewData === "grid" ? "mission-listing-div" : "mission-listing-div-list"
@@ -82,7 +83,7 @@ export const MissionList = ({
         </div>
 
         <div className="listing-block">
-          <img src={require(`../../../Assets/${thumbnail}`)} alt="listing" />
+          <img data-testid="thumbnail-img" src={require(`../../../Assets/${thumbnail}`)} alt="listing" />
         </div>
         <span className="theme">{theme}</span>
       </div>

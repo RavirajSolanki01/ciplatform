@@ -123,7 +123,7 @@ export const listData = [
     title: "Grow Trees – On the path to environment sustainability",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute irure dolorin reprehenderit Lorem ipsum dolor sit amet, consecteturadipisicing elit. Deserunt nesciunt dicta nam nulla autem dolorerecusandae laboriosam alias rem itaque?",
-    organisation: "Smith International caring foundation",
+    organisation: "Tree Canada",
     btnName: "Apply",
     skills: "Teaching",
     goalObject: { status: "objective", objective: "Ongoing Opportunity" },

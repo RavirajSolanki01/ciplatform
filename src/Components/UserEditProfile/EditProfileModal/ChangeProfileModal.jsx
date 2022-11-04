@@ -2,7 +2,7 @@ import React from "react";
 import { NormalButton, NormalInput } from "../../../Helper";
 import "../editprofile.css";
 
-export const ChangeProfileModal = () => {
+export const ChangeProfileModal = ({closeModal}) => {
   return (
     <>
       <NormalInput
@@ -20,7 +20,7 @@ export const ChangeProfileModal = () => {
         className="edit-profile-modal-inp"
       />
       <div className="edit-profile-modal-div">
-        <NormalButton className="edit-modal-cancel-btn" name="Cancel" />
+        <NormalButton className="edit-modal-cancel-btn" name="Cancel" btnClick={closeModal} />
         <NormalButton
           className="edit-modal-change-btn"
           name="Change Password"

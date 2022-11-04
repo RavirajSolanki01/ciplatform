@@ -3,9 +3,8 @@ import { allSkills } from "../../../Data/Data";
 import { NormalButton } from "../../../Helper";
 import "../editprofile.css";
 
-export const AddSkillsModal = ({ selectedSkills, chosen }) => {
+export const AddSkillsModal = ({ selectedSkills, chosen, closeModal }) => {
   const [addedSkills, setAddedSkills] = useState(chosen);
-
 
   const addSkills = (skill) => {
     if (!addedSkills.includes(skill)) {
@@ -58,7 +57,11 @@ export const AddSkillsModal = ({ selectedSkills, chosen }) => {
         </div>
       </div>
       <div className="add-skill-modal-btn">
-        <NormalButton className="edit-modal-cancel-btn" name="Cancel" />
+        <NormalButton
+          className="edit-modal-cancel-btn"
+          name="Cancel"
+          btnClick={closeModal}
+        />
         <NormalButton
           className="contactus-modal-change-btn"
           name="Save"

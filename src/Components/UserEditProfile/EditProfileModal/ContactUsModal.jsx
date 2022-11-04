@@ -1,7 +1,7 @@
 import React from "react";
 import { NormalButton, NormalInput } from "../../../Helper";
 import "../editprofile.css";
-export const ContactUsModal = () => {
+export const ContactUsModal = ({ closeModal }) => {
   return (
     <div>
       <NormalInput
@@ -30,7 +30,11 @@ export const ContactUsModal = () => {
         htmlfor="message"
       />
       <div className="contactus-modal-btn">
-        <NormalButton className="edit-modal-cancel-btn" name="Cancel" />
+        <NormalButton
+          className="edit-modal-cancel-btn"
+          name="Cancel"
+          btnClick={closeModal}
+        />
         <NormalButton className="contactus-modal-change-btn" name="Save" />
       </div>
     </div>

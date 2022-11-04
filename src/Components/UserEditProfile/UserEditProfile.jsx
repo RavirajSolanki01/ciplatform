@@ -80,7 +80,7 @@ export const UserEditProfile = () => {
             closeModal={() => setShowModal(false)}
             title="Change Password"
           >
-            <ChangeProfileModal />
+            <ChangeProfileModal closeModal={() => setShowModal(false)} />
           </CustomModal>
         ) : null}
 
@@ -90,7 +90,7 @@ export const UserEditProfile = () => {
             closeModal={() => setContatcUs(false)}
             title="Contact Us"
           >
-            <ContactUsModal />
+            <ContactUsModal closeModal={() => setContatcUs(false)} />
           </CustomModal>
         ) : null}
 
@@ -111,6 +111,7 @@ export const UserEditProfile = () => {
               className="edit-profile-input"
               htmlfor="surname"
             />
+
             <NormalInput
               label="Employee ID"
               placeholder="Enter your employee id"
@@ -210,6 +211,7 @@ export const UserEditProfile = () => {
             >
               <AddSkillsModal
                 chosen={chosenSkills}
+                closeModal={() => setSkillsModal(false)}
                 selectedSkills={(item) => {
                   setChosenSkills(item);
                   setSkillsModal(false);

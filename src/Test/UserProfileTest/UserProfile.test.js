@@ -90,6 +90,15 @@ describe("User Edit Profile Test", () => {
       fireEvent.click(closeModalBtn);
       expect(cusModal).not.toBeInTheDocument();
     });
+    test("Modal should be removed from the dom on clicked Cancel button", () => {
+      render(<MockUserEditProfile />);
+      const changeBtn = screen.getByTestId("change-password");
+      fireEvent.click(changeBtn);
+      const cancelBtn = screen.getByText(/cancel/i);
+      const cusModal = screen.getByTestId("custom-modal");
+      fireEvent.click(cancelBtn);
+      expect(cusModal).not.toBeInTheDocument();
+    });
   });
 
   describe("Contactus modal tests in user edit profile page", () => {
@@ -124,6 +133,104 @@ describe("User Edit Profile Test", () => {
       }
     });
 
-    // test("Modal should be removed from DOM ")
+    test("Modal should be removed from DOM when clicked close button", () => {
+      clickContcUsBtn();
+      const closeModal = screen.getByTestId("close-modal");
+      const customModal = screen.getByTestId("custom-modal");
+      fireEvent.click(closeModal);
+      expect(customModal).not.toBeInTheDocument();
+    });
+    test("Modal should be removed from DOM when clicked Cancel button", () => {
+      clickContcUsBtn();
+      const cancelBtn = screen.getByText(/cancel/i);
+      const customModal = screen.getByTestId("custom-modal");
+      fireEvent.click(cancelBtn);
+      expect(customModal).not.toBeInTheDocument();
+    });
+  });
+
+  describe("Input tests of User Edit Profile", () => {
+    it("Input value must reflect when insert the value", () => {
+      render(<MockUserEditProfile />);
+      const profileInputs = screen.getAllByTestId("normal-input");
+      profileInputs.forEach((element) => {
+        fireEvent.change(element, {
+          target: { value: "Your input message" },
+        });
+        expect(element.value).toBe("Your input message");
+      });
+    });
+
+    it("Textarea value must reflect when insert the value", () => {
+      render(<MockUserEditProfile />);
+      const profileTextareas = screen.getAllByTestId("normal-textarea");
+      profileTextareas.forEach((element) => {
+        fireEvent.change(element, {
+          target: { value: "Your textarea message" },
+        });
+        expect(element.value).toBe("Your textarea message");
+      });
+    });
+
+    it("Select should be present when page load", () => {
+      render(<MockUserEditProfile />);
+      const profileSelect = screen.getAllByTestId("normal-select");
+      profileSelect.forEach((element) => {
+        expect(element).toBeInTheDocument();
+      });
+    });
+
+    it("Save button should be present in the DOM on page load", () => {
+      render(<MockUserEditProfile />);
+      const saveBtn = screen.getByText(/save/i);
+      expect(saveBtn).toBeInTheDocument();
+    });
+
+  });
+
+  describe("Add Skill Modal tests", () => {
+    it("Add skill button should be present on page load", () => {
+      render(<MockUserEditProfile />);
+      const addSkillBtn = screen.getByText(/add skills/i);
+      expect(addSkillBtn).toBeInTheDocument();
+    });
+
+    it("Add skill Modal should be in DOM when clicked button", () => {
+      render(<MockUserEditProfile />);
+      const addSkillBtn = screen.getByText(/add skills/i);
+      fireEvent.click(addSkillBtn);
+      const customModal = screen.getByTestId("custom-modal");
+      expect(customModal).toBeInTheDocument();
+    });
+
+    it("Add skill Modal should be Removed from DOM when clicked close button", () => {
+      render(<MockUserEditProfile />);
+      const addSkillBtn = screen.getByText(/add skills/i);
+      fireEvent.click(addSkillBtn);
+      const closeModal = screen.getByTestId("close-modal");
+      const customModal = screen.getByTestId("custom-modal");
+      fireEvent.click(closeModal);
+      expect(customModal).not.toBeInTheDocument();
+    });
+
+    it("Add skill Modal should be Removed from DOM when clicked Cancel button", () => {
+      render(<MockUserEditProfile />);
+      const addSkillBtn = screen.getByText(/add skills/i);
+      fireEvent.click(addSkillBtn);
+      const cancelBtn = screen.getByText(/Cancel/i);
+      const customModal = screen.getByTestId("custom-modal");
+      fireEvent.click(cancelBtn);
+      expect(customModal).not.toBeInTheDocument();
+    });
+
+    it("Add skill Modal should be Removed from DOM when clicked Save button", () => {
+      render(<MockUserEditProfile />);
+      const addSkillBtn = screen.getByText(/add skills/i);
+      fireEvent.click(addSkillBtn);
+      const saveBtn = screen.getAllByText(/save/i);
+      const customModal = screen.getByTestId("custom-modal");
+      fireEvent.click(saveBtn[0]);
+      expect(customModal).not.toBeInTheDocument();
+    });
   });
 });

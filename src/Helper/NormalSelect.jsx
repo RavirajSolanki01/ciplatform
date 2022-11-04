@@ -11,7 +11,7 @@ export const NormalSelect = ({
   return (
     <div className={className ? `${className} normal-select` : "normal-select"}>
       <label htmlFor={htmlfor}>{label}</label>
-      <select name={name || "form-select"} id={htmlfor}>
+      <select name={name || "form-select"} id={htmlfor} data-testid="normal-select" >
         <option value="default">{placeholder}</option>
         {items.map((item) => (
           <option
