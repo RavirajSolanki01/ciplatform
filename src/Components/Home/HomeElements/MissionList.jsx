@@ -26,7 +26,7 @@ export const MissionList = ({
 
   return (
     <div 
-    data-testid="all-mission-list"
+    data-testid={viewData==="grid"?"grid-mode":"list-mode"}
       key={id}
       className={`${
         viewData === "grid" ? "mission-listing-div" : "mission-listing-div-list"
@@ -50,7 +50,7 @@ export const MissionList = ({
           ) : (
             ""
           )}
-          <button>
+          <button data-testid="location-btn" >
             <img
               src={require("../../../Assets/signs/location.svg").default}
               alt=""
@@ -59,7 +59,7 @@ export const MissionList = ({
           </button>
         </div>
         <div className="mission-listing-favourite">
-          <button>
+          <button data-testid="like-mission-btn" >
             {isFavourite ? (
               <img
                 src={require("../../../Assets/signs/heart.svg").default}
@@ -74,7 +74,7 @@ export const MissionList = ({
           </button>
         </div>
         <div className="mission-listing-share">
-          <button>
+          <button data-testid="share-mission" >
             <img
               src={require("../../../Assets/signs/share.svg").default}
               alt=""
@@ -127,14 +127,14 @@ export const MissionList = ({
           </span>
         </div>
 
-        <p
+        <p data-testid="mission-title"
           className={`${
             viewData === "grid" ? "listing-title" : "listing-title-list"
           }`}
         >
           {title}
         </p>
-        <p
+        <p data-testid="mission-description"
           className={`${
             btnName === "Apply"
               ? "listing-short-description"
@@ -156,9 +156,9 @@ export const MissionList = ({
         </div>
 
         <div className={`${viewData === "list" && "footer-list"}`}>
-          <div className={`${viewData === "grid" ? "" : "left-footer-list"}`}>
+          <div className={`${viewData === "grid" ? "" : "left-footer-list"}`} >
             {btnName === "Apply" && (
-              <div
+              <div  data-testid="skill"
                 style={{
                   display: `${viewData === "grid" ? "none" : ""}`,
                 }}

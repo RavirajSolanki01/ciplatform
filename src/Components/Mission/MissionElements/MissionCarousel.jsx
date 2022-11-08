@@ -12,10 +12,11 @@ import { InfoBox } from "../../../Helper/InfoBox";
 
 export const MissionCarousel = () => {
   return (
-    <div className="mission-carousel" data-testid="mission-carousel" >
+    <div className="mission-carousel" data-testid="mission-carousel">
       <div className="left-mission-carousel">
         <div>
           <img
+            data-testid="carousel-preview"
             className="srrrc"
             src={require("../../../Assets/mission-pic.png")}
             alt=""

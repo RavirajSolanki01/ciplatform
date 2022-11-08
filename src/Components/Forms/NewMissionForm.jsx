@@ -6,7 +6,7 @@ import "./form.css";
 
 export const NewMissionForm = () => {
   return (
-    <div className="new-mission-form">
+    <div className="new-mission-form" data-testid="new-mission-form" >
       <form>
         <div>
           <NormalSelect

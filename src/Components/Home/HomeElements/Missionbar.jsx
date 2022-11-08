@@ -23,7 +23,7 @@ export const Missionbar = () => {
         <div className="mission-sort">
           <DropDown name="Sort by" items={dropdowndata} />
         </div>
-        <button
+        <button data-testid="show-grid-btn"
           className={`${view === "grid" ? "active-view" : ""} mission-grid-btn`}
           onClick={() => handleClick("grid")}
         >
@@ -32,7 +32,7 @@ export const Missionbar = () => {
             alt=""
           />
         </button>
-        <button
+        <button data-testid="show-list-btn"
           className={`${view === "list" ? "active-view" : ""} mission-grid-btn`}
           onClick={() => handleClick("list")}
         >

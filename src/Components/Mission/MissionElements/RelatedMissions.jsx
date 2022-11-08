@@ -3,7 +3,7 @@ import { relatedMission } from "../../../Data/Data";
 import { MissionList } from "../../Home/HomeElements/MissionList";
 export const RelatedMissions = () => {
   return (
-    <div className="related-mission-div" >
+    <div className="related-mission-div" data-testid="related-mission">
       <div>Related Missions</div>
       <div className="related-mission-listing">
         {relatedMission.map(
@@ -24,9 +24,8 @@ export const RelatedMissions = () => {
             deadline,
             goalObject,
           }) => (
-           
             <MissionList
-            key={id}
+              key={id}
               id={id}
               thumbnail={thumbnail}
               isFavourite={isFavourite}
@@ -46,7 +45,6 @@ export const RelatedMissions = () => {
           )
         )}
       </div>
-      
     </div>
   );
 };

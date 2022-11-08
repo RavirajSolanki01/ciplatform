@@ -1,13 +1,7 @@
-import {
-  fireEvent,
-  getAllByTestId,
-  getByTestId,
-  render,
-  screen,
-} from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { Home } from "../../Components";
+import { Home, PrivacyPolicy } from "../../Components";
 import { store } from "../../Redux/store";
 
 describe("Home test", () => {
@@ -75,15 +69,15 @@ describe("Home test", () => {
       });
     }
   });
-  // test("Should render view details button on page load", () => {
-  //   render(<MockHome />);
-  //   const viewDetailsBtn = screen.getAllByText(/view details/i);
-  //   if (viewDetailsBtn.length) {
-  //     viewDetailsBtn.forEach((element) => {
-  //       expect(element).toBeInTheDocument();
-  //     });
-  //   }
-  // });
+  test("Should render view details button on page load", () => {
+    render(<MockHome />);
+    const viewDetailsBtn = screen.getAllByText(/view details/i);
+    if (viewDetailsBtn.length) {
+      viewDetailsBtn.forEach((element) => {
+        expect(element).toBeInTheDocument();
+      });
+    }
+  });
 
   test("Should render Pagination on page load", () => {
     render(<MockHome />);
@@ -120,16 +114,6 @@ describe("Home test", () => {
     expect(cookiesDiv).not.toBeVisible();
   });
 
-  test("Should render all listed missions on page load", () => {
-    render(<MockHome />);
-    const missionListDivs = screen.getAllByTestId("all-mission-list");
-    if (missionListDivs.length) {
-      missionListDivs.forEach((element) => {
-        expect(element).toBeInTheDocument();
-      });
-    }
-  });
-
   test("Thumbnail should be visible on page load", () => {
     render(<MockHome />);
     const img = screen.getAllByTestId("thumbnail-img");
@@ -138,5 +122,106 @@ describe("Home test", () => {
         expect(element).toBeVisible();
       });
     }
+  });
+
+  test("Footer should be present on page load", () => {
+    render(<MockHome />);
+    const footer = screen.getByTestId("footer");
+    expect(footer).toBeInTheDocument();
+  });
+
+  test("Share button should be present on mission load", () => {
+    render(<MockHome />);
+    const shareBtn = screen.getAllByTestId("share-mission");
+    if (shareBtn.length) {
+      shareBtn.forEach((element) => {
+        expect(element).toBeInTheDocument();
+      });
+    }
+  });
+
+  test("Like mission button should be present on page load", () => {
+    render(<MockHome />);
+    const likeBtn = screen.getAllByTestId("like-mission-btn");
+    if (likeBtn.length) {
+      likeBtn.forEach((element) => {
+        expect(element).toBeInTheDocument();
+      });
+    }
+  });
+  test("Loaction button should be present on page load", () => {
+    render(<MockHome />);
+    const locationBtn = screen.getAllByTestId("location-btn");
+    if (locationBtn.length) {
+      locationBtn.forEach((element) => {
+        expect(element).toBeInTheDocument();
+      });
+    }
+  });
+  test("Title should be present on page load", () => {
+    render(<MockHome />);
+    const title = screen.getAllByTestId("mission-title");
+    if (title.length) {
+      title.forEach((element) => {
+        expect(element).toBeInTheDocument();
+      });
+    }
+  });
+  test("Mission description should be present on page load", () => {
+    render(<MockHome />);
+    const missionDescription = screen.getAllByTestId("mission-description");
+    if (missionDescription.length) {
+      missionDescription.forEach((element) => {
+        expect(element).toBeInTheDocument();
+      });
+    }
+  });
+
+  test("Missions should be displayed in grids when clicked grid btn", () => {
+    render(<MockHome />);
+    const gridBtn = screen.getByTestId("show-grid-btn");
+    fireEvent.click(gridBtn);
+    const allMissions = screen.getAllByTestId("grid-mode");
+    if (allMissions.length) {
+      allMissions.forEach((element) => {
+        expect(element).toBeInTheDocument();
+      });
+    }
+  });
+
+  test("Missions should be displayed in list when clicked list btn", () => {
+    render(<MockHome />);
+    const listBtn = screen.getByTestId("show-list-btn");
+    fireEvent.click(listBtn);
+    const allMissions = screen.getAllByTestId("list-mode");
+    if (allMissions.length) {
+      allMissions.forEach((element) => {
+        expect(element).toBeInTheDocument();
+      });
+    }
+  });
+  test("Skill details should be present on list view btn click", () => {
+    render(<MockHome />);
+    const listBtn = screen.getByTestId("show-list-btn");
+    fireEvent.click(listBtn);
+    const skills = screen.getAllByTestId("skill");
+    if (skills.length) {
+      skills.forEach((element) => {
+        expect(element).toBeInTheDocument();
+      });
+    }
+  });
+
+  test("Privacy policy page should render on click of privacy policy btn", () => {
+    render(<MockHome />);
+    const privacyBtn = screen.getByTestId("privacy-policy-btn");
+    fireEvent.click(privacyBtn);
+    render(
+      <BrowserRouter>
+        <PrivacyPolicy />
+      </BrowserRouter>
+    );
+    const privacy = screen.getByTestId("privacy-comp");
+    expect(privacy).toBeInTheDocument();
   });
 });

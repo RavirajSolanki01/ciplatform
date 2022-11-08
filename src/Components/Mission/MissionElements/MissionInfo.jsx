@@ -45,11 +45,11 @@ export const MissionInfo = () => {
   }, []);
 
   return (
-    <div className="mission-info">
+    <div className="mission-info" data-testid="mission-info" >
       <div className="mission-feature-left">
         <ul className="mission-tabs">
           {missionTabs.map((tab) => (
-            <li
+            <li data-testid="info-tabs"
               key={tab}
               className={tab === active ? "active-tab" : undefined}
               onClick={() => setActive(tab)}
@@ -100,7 +100,7 @@ export const MissionInfo = () => {
             <div className="volunteer-outer-div">
               {currentPosts.map((item, key) => {
                 return (
-                  <div className="volunteers-el" key={key}>
+                  <div className="volunteers-el" key={key}  data-testid="volunteer">
                     <img
                       src={require(`../../../Assets/volunteers/${item.img}`)}
                       alt=""
