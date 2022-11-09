@@ -16,7 +16,7 @@ export const StoryPage = () => {
       <Searchbar />
       <div className="story-div">
         <div>
-          <span>
+          <span data-testid="story-para" >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim venim, quis nostrud exercitation ullamco laboris nisi ut

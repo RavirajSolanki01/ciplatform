@@ -9,6 +9,8 @@ import "react-quill/dist/quill.snow.css";
 import { useRef, useState } from "react";
 
 export const ShareStory = () => {
+
+
   const ref = useRef();
   const [arr, setArr] = useState([]);
   const [file, setFile] = useState();
@@ -58,7 +60,7 @@ export const ShareStory = () => {
             />
           </div>
 
-          <div>
+          <div data-testid="react-quill">
             <ReactQuill
               theme="snow"
               modules={modules}
@@ -79,7 +81,7 @@ export const ShareStory = () => {
 
           <div className="share-story-upload">
             <label htmlFor="upload-btn">Upload your Photos</label>
-            <button id="upload-btn" onClick={handleClick}>
+            <button id="upload-btn" onClick={handleClick} data-testid="upload-btn" >
               <img
                 src={require("../../Assets/signs/drag-and-drop.png")}
                 alt=""

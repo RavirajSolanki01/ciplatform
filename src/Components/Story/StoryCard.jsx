@@ -11,9 +11,9 @@ export const StoryCard = ({
   person_name,
 }) => {
   return (
-    <div className="storycard-div">
+    <div className="storycard-div" data-testid="storycard-div" >
       <div>
-        <img src={require(`../../Assets/${thumbnail}`)} alt={thumbnail} />
+        <img data-testid="thumbnail"  src={require(`../../Assets/${thumbnail}`)} alt={thumbnail} />
         <span className="storycard-theme">{theme}</span>
         <div className="storycard-hover">
           <NormalButton
@@ -24,15 +24,15 @@ export const StoryCard = ({
         </div>
       </div>
       <div>
-        <p className="storycard-title">{title}</p>
-        <p className="storycard-short-description">{description}</p>
+        <p  data-testid="story-card-title" className="storycard-title">{title}</p>
+        <p data-testid="story-card-desp" className="storycard-short-description">{description}</p>
       </div>
       <div className="storycard-person">
-        <img
+        <img data-testid="person"
           src={require(`../../Assets/volunteers/${person_img}`)}
           alt={person_img}
         />
-        <span>{person_name}</span>
+        <span data-testid="person-name" >{person_name}</span>
       </div>
     </div>
   );
