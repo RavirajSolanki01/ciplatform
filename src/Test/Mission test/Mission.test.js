@@ -15,6 +15,14 @@ describe("Missions test", () => {
     );
   };
 
+  const openModalFun = () => {
+    render(<MockMission />);
+    const submitBtn = screen.getByText(/submit new mission/i);
+    fireEvent.click(submitBtn);
+    const missionForm = screen.getByTestId("new-mission-form");
+    expect(missionForm).toBeInTheDocument();
+  };
+
   test("Navbar should render on page load", () => {
     render(<MockMission />);
     const navDiv = screen.getByTestId("navbar");
@@ -262,6 +270,111 @@ describe("Missions test", () => {
         fireEvent.click(closeBtn);
         expect(missionForm).not.toBeInTheDocument();
       });
+
+      test("Select country selector should be present on modal open", () => {
+        openModalFun();
+        const countrySelect = screen.getByRole("option", {
+          name: "Select Country",
+        });
+        expect(countrySelect).toBeInTheDocument();
+      });
+      test("Select city selector should be present on modal open", () => {
+        openModalFun();
+        const citySelect = screen.getByRole("option", {
+          name: "Select City",
+        });
+        expect(citySelect).toBeInTheDocument();
+      });
+
+      test("Mission title input should be present", () => {
+        openModalFun();
+        const title = screen.getByPlaceholderText(/Enter Mission Title/i);
+        expect(title).toBeInTheDocument();
+      });
+
+      test("Enter Mission input should be present", () => {
+        openModalFun();
+        const mission = screen.getByPlaceholderText(/Enter your message/i);
+        expect(mission).toBeInTheDocument();
+      });
+
+      test("Mission organization input should be present", () => {
+        openModalFun();
+        const missionOrg = screen.getByPlaceholderText(
+          /Enter mission organisation name/i
+        );
+        expect(missionOrg).toBeInTheDocument();
+      });
+      test("Start date input should be present", () => {
+        openModalFun();
+        const startDate = screen.getByPlaceholderText(/Select start date/i);
+        expect(startDate).toBeInTheDocument();
+      });
+      test("End date input should be present", () => {
+        openModalFun();
+        const endDate = screen.getByPlaceholderText(/Select end date/i);
+        expect(endDate).toBeInTheDocument();
+      });
+
+      // test("Total seats input should be present", () => {
+      //   openModalFun();
+      //   const totalSeats = screen.getByPlaceholderText(/Enter total seats/i);
+      //   expect(totalSeats).toBeInTheDocument();
+      // });
+      // test("Registration deadline input should be present", () => {
+      //   openModalFun();
+      //   const totalSeats = screen.getByPlaceholderText(
+      //     /Enter mission registration deadline/i
+      //   );
+      //   expect(totalSeats).toBeInTheDocument();
+      // });
+
+      // test("Select theme selector should be present on modal open", () => {
+      //   openModalFun();
+      //   const themeSelect = screen.getByRole("option", {
+      //     name: "Select mission theme",
+      //   });
+      //   expect(themeSelect).toBeInTheDocument();
+      // });
+      // test("Select Skills selector should be present on modal open", () => {
+      //   openModalFun();
+      //   const missionSkill = screen.getByRole("option", {
+      //     name: "Select mission Skills",
+      //   });
+      //   expect(missionSkill).toBeInTheDocument();
+      // });
+
+      // test("Upload button should be present on modal open", () => {
+      //   openModalFun();
+      //   const uploadBtn = document.getElementById("upload-img");
+      //   expect(uploadBtn).toBeInTheDocument();
+      // });
+      // test("Upload resume button should be present on modal open", () => {
+      //   openModalFun();
+      //   const uploadResumeBtn = document.getElementById("upload-resume");
+      //   expect(uploadResumeBtn).toBeInTheDocument();
+      // });
+
+      // test("Select availability selector should be present on modal open", () => {
+      //   openModalFun();
+      //   const availibility = screen.getByRole("option", {
+      //     name: "Select availability",
+      //   });
+      //   expect(availibility).toBeInTheDocument();
+      // });
+
+      // test("Cancel button should be present", () => {
+      //   openModalFun();
+      //   const cancelBtn = screen.getByText(/Cancel/i);
+      //   expect(cancelBtn).toBeInTheDocument();
+      // });
+      // test("Submit button should be present", () => {
+      //   openModalFun();
+      //   const submitBtn = screen.getByRole('button',{name:'submit'});
+      //   expect(submitBtn).toBeInTheDocument();
+      // });
+
+
     });
   });
 });

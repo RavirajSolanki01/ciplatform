@@ -103,4 +103,13 @@ describe("Share story page test", () => {
     const footer = screen.getByTestId("footer");
     expect(footer).toBeInTheDocument();
   });
+
+  test("Select input should be present on page load", () => {
+    render(<MockShareStory />);
+    const select = screen.getByTestId("normal-select");
+    expect(select).toBeInTheDocument();
+  });
+
+
+
 });
