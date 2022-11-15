@@ -28,11 +28,25 @@ describe("Missions test", () => {
     const navDiv = screen.getByTestId("navbar");
     expect(navDiv).toBeInTheDocument();
   });
+
+  test("Navbar should have class", () => {
+    render(<MockMission />);
+    const navClass = screen.getByTestId("navbar");
+    expect(navClass).toHaveClass("navbar");
+  });
+
   test("Should render Searchbar on page load", () => {
     render(<MockMission />);
     const searchbar = screen.getByTestId("searchbar");
     expect(searchbar).toBeInTheDocument();
   });
+
+  test("Tagbar should have class", () => {
+    render(<MockMission />);
+    const searchbarClass = screen.getByTestId("searchbar");
+    expect(searchbarClass).toHaveClass("searchbar");
+  });
+
   test("Should render Footer on page load", () => {
     render(<MockMission />);
     const footer = screen.getByTestId("footer");
@@ -44,12 +58,23 @@ describe("Missions test", () => {
     const missionCarousel = screen.getByTestId("mission-carousel");
     expect(missionCarousel).toBeInTheDocument();
   });
+  test("Mission carousel component should have class on page load", () => {
+    render(<MockMission />);
+    const missionCarouselClass = screen.getByTestId("mission-carousel");
+    expect(missionCarouselClass).toHaveClass("mission-carousel");
+  });
 
   test("Should render Mission Info component on page load", () => {
     render(<MockMission />);
     const missionInfo = screen.getByTestId("mission-info");
     expect(missionInfo).toBeInTheDocument();
   });
+  test("Should render Mission Info component on page load", () => {
+    render(<MockMission />);
+    const missionInfoClass = screen.getByTestId("mission-info");
+    expect(missionInfoClass).toHaveClass("mission-info");
+  });
+
   test("Should render Related Mission  component on page load", () => {
     render(<MockMission />);
     const relatedMission = screen.getByTestId("related-mission");
@@ -57,19 +82,39 @@ describe("Missions test", () => {
   });
   test("Should render Related Mission  component on page load", () => {
     render(<MockMission />);
+    const relatedMissionClass = screen.getByTestId("related-mission");
+    expect(relatedMissionClass).toHaveClass("related-mission-div");
+  });
+
+  test("Should render Related Mission  component on page load", () => {
+    render(<MockMission />);
     const preview = screen.getByTestId("carousel-preview");
     expect(preview).toBeVisible();
   });
+  test("Should render Related Mission  component on page load", () => {
+    render(<MockMission />);
+    const previewClass = screen.getByTestId("carousel-preview");
+    expect(previewClass).toHaveClass("srrrc");
+  });
+
   test("Should render Progressbar component on page load", () => {
     render(<MockMission />);
     const progress = screen.getByTestId("progressbar-test");
     expect(progress).toBeInTheDocument();
   });
+
+  test("Should render Progressbar component on page load", () => {
+    render(<MockMission />);
+    const progressCLass = screen.getByTestId("progressbar-test");
+    expect(progressCLass).toHaveClass("progressbar");
+  });
+
   test("Should render Add to favourite button on page load", () => {
     render(<MockMission />);
     const addFavBtn = screen.getByText("Add to favourite");
     expect(addFavBtn).toBeInTheDocument();
   });
+
   test("Should render Recommend to a Co-Worker button on page load", () => {
     render(<MockMission />);
     const recommendbtn = screen.getByText("Recommend to a Co-Worker");
@@ -84,6 +129,15 @@ describe("Missions test", () => {
       });
     }
   });
+  test("+Rating component should have class on page load", () => {
+    render(<MockMission />);
+    const ratingClass = screen.getAllByTestId("rating-test");
+    if (ratingClass.length) {
+      ratingClass.forEach((element) => {
+        expect(element).toHaveClass("rating-div");
+      });
+    }
+  });
 
   test("Should render 4 infoboxes on page load", () => {
     render(<MockMission />);
@@ -93,11 +147,30 @@ describe("Missions test", () => {
       expect(element).toBeInTheDocument();
     });
   });
+  test("infoboxe should have class on page load", () => {
+    render(<MockMission />);
+    const infoBoxClass = screen.getAllByTestId("infobox-div");
+    infoBoxClass.forEach((element) => {
+      expect(element).toHaveClass("info-class");
+    });
+  });
 
   test("Apply now button should be in the dom when page load", () => {
     render(<MockMission />);
     const applyBtn = screen.getByText(/apply now/i);
     expect(applyBtn).toBeInTheDocument();
+  });
+
+  test("Apply now button should have class the dom when page load", () => {
+    render(<MockMission />);
+    const applyBtnClass = screen.getByText(/apply now/i);
+    expect(applyBtnClass).toHaveClass("normal-btn");
+  });
+
+  test("Apply now button should have class when page load", () => {
+    render(<MockMission />);
+    const applyBtnClass = screen.getByText(/apply now/i);
+    expect(applyBtnClass).toHaveClass("normal-btn-common");
   });
 
   describe("Mission info div tests", () => {
@@ -206,6 +279,7 @@ describe("Missions test", () => {
         });
       }
     });
+    
     test("Like mission btn be present", () => {
       render(<MockMission />);
       const likeBtn = screen.getAllByTestId("like-mission-btn");
@@ -292,10 +366,30 @@ describe("Missions test", () => {
         expect(title).toBeInTheDocument();
       });
 
-      test("Enter Mission input should be present", () => {
+      test("Mission title input should reflect input value", () => {
+        openModalFun();
+        const title = screen.getByPlaceholderText(/Enter Mission Title/i);
+        fireEvent.change(title, {
+          target: { value: "mission title goes here" },
+        });
+        expect(title.value).toBe("mission title goes here");
+      });
+
+
+
+      test("Enter Mission description input should be present", () => {
+        openModalFun();
+        const missionDes = screen.getByPlaceholderText(/Enter your message/i);
+        expect(missionDes).toBeInTheDocument();
+      });
+
+      test("Mission input should reflect Mission value", () => {
         openModalFun();
         const mission = screen.getByPlaceholderText(/Enter your message/i);
-        expect(mission).toBeInTheDocument();
+        fireEvent.change(mission, {
+          target: { value: "mission goes here" },
+        });
+        expect(mission.value).toBe("mission goes here");
       });
 
       test("Mission organization input should be present", () => {
@@ -305,28 +399,99 @@ describe("Missions test", () => {
         );
         expect(missionOrg).toBeInTheDocument();
       });
+
+      test("Mission organization should reflect organization value", () => {
+        openModalFun();
+        const orgName = screen.getByPlaceholderText(
+          /Enter mission organisation name/i
+        );
+        fireEvent.change(orgName, {
+          target: { value: "Organization name goes here" },
+        });
+        expect(orgName.value).toBe("Organization name goes here");
+      });
+
+      test("Organization details textarea input should be present", () => {
+        openModalFun();
+        const orgDetails = screen.getByPlaceholderText(
+          /Enter mission organisation detail/i
+        );
+        expect(orgDetails).toBeInTheDocument();
+      });
+
+      test("Organization details textarea should reflect organization details", () => {
+        openModalFun();
+        const orgName = screen.getByPlaceholderText(
+          /Enter mission organisation detail/i
+        );
+        fireEvent.change(orgName, {
+          target: { value: "Organization details goes here" },
+        });
+        expect(orgName.value).toBe("Organization details goes here");
+      });
+
       test("Start date input should be present", () => {
         openModalFun();
         const startDate = screen.getByPlaceholderText(/Select start date/i);
         expect(startDate).toBeInTheDocument();
       });
+
+      test("Start date input should reflect Start date value", () => {
+        openModalFun();
+        const startDate = screen.getByPlaceholderText(/Select start date/i);
+        fireEvent.change(startDate, {
+          target: { value: "Start date goes here" },
+        });
+        expect(startDate.value).toBe("Start date goes here");
+      });
+
       test("End date input should be present", () => {
         openModalFun();
         const endDate = screen.getByPlaceholderText(/Select end date/i);
         expect(endDate).toBeInTheDocument();
       });
 
-      // test("Total seats input should be present", () => {
+      test("End date input should reflect End date value", () => {
+        openModalFun();
+        const endDate = screen.getByPlaceholderText(/Select end date/i);
+        fireEvent.change(endDate, {
+          target: { value: "End date goes here" },
+        });
+        expect(endDate.value).toBe("End date goes here");
+      });
+
+      test("Total seats input should be present", () => {
+        openModalFun();
+        const totalSeats = screen.getByPlaceholderText(/Enter total seats/i);
+        expect(totalSeats).toBeInTheDocument();
+      });
+
+      // test("Total seats input should reflect Total seats value", () => {
       //   openModalFun();
       //   const totalSeats = screen.getByPlaceholderText(/Enter total seats/i);
-      //   expect(totalSeats).toBeInTheDocument();
+      //   fireEvent.change(totalSeats, {
+      //     target: { value: 21 },
+      //   });
+      //   expect(totalSeats.value).toEqual(JSON.stringify(21));
       // });
+
       // test("Registration deadline input should be present", () => {
       //   openModalFun();
       //   const totalSeats = screen.getByPlaceholderText(
       //     /Enter mission registration deadline/i
       //   );
       //   expect(totalSeats).toBeInTheDocument();
+      // });
+
+      // test("Registration deadline input should reflect Registration deadline value", () => {
+      //   openModalFun();
+      //   const regDeadline = screen.getByPlaceholderText(
+      //     /Enter mission registration deadline/i
+      //   );
+      //   fireEvent.change(regDeadline, {
+      //     target: { value: "21st March, 2023" },
+      //   });
+      //   expect(regDeadline.value).toBe("21st March, 2023");
       // });
 
       // test("Select theme selector should be present on modal open", () => {
@@ -368,13 +533,23 @@ describe("Missions test", () => {
       //   const cancelBtn = screen.getByText(/Cancel/i);
       //   expect(cancelBtn).toBeInTheDocument();
       // });
-      // test("Submit button should be present", () => {
+      // test("Cancel button click should remove modal", () => {
       //   openModalFun();
-      //   const submitBtn = screen.getByRole('button',{name:'submit'});
-      //   expect(submitBtn).toBeInTheDocument();
+      //   const cancelBtn = screen.getByText(/Cancel/i);
+      //   const modal = screen.getByTestId("new-mission-form");
+      //   fireEvent.click(cancelBtn);
+      //   expect(modal).not.toBeInTheDocument();
       // });
 
-
+      // test("Submit button should be present", () => {
+      //   openModalFun();
+      //   const submitBtn = screen.getAllByText(/submit/i);
+      //   if (submitBtn.length) {
+      //     submitBtn.forEach((element) => {
+      //       expect(element).toBeInTheDocument();
+      //     });
+      //   }
+      // });
     });
   });
 });

@@ -19,7 +19,7 @@ export const UploadInput = ({
     }
   };
   return (
-    <div className={className ? className : "upload-input"}>
+    <div className={className ? className : "upload-input"} data-testid="upload-input" >
       <label htmlFor={htmlfor}>{label}</label>
       <button onClick={handleClick} id={htmlfor}>
         {file ? (

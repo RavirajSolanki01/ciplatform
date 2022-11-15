@@ -63,7 +63,7 @@ export const Navbar = () => {
           top="214px"
           isCloseBtn
         >
-          <NewMissionForm />
+          <NewMissionForm cancelBtnClick={() => setshowModal(false)} />
         </CustomModal>
       )}
     </div>

@@ -25,7 +25,7 @@ export const CustomModal = ({
   }, []);
 
   return (
-    <div className="modal-outer" data-testid="custom-modal" >
+    <div className="modal-outer" data-testid="custom-modal">
       <div
         ref={ref}
         className="modal-inner"
@@ -35,7 +35,7 @@ export const CustomModal = ({
           <span>{title || "Title"}</span>
           {isCloseBtn && (
             <button
-            data-testid="close-modal"
+              data-testid="close-modal"
               className="modal-close-btn"
               onClick={() => closeModal(false)}
             >

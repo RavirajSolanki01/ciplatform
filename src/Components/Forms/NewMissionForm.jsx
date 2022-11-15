@@ -4,7 +4,7 @@ import { NormalButton, NormalInput, NormalSelect } from "../../Helper";
 import { UploadInput } from "../../Helper/UploadInput";
 import "./form.css";
 
-export const NewMissionForm = () => {
+export const NewMissionForm = ({cancelBtnClick}) => {
   return (
     <div className="new-mission-form" data-testid="new-mission-form" >
       <form>
@@ -129,6 +129,7 @@ export const NewMissionForm = () => {
             type="cancel"
             name="Cancel"
             className="cancel-form-btn"
+            btnClick={cancelBtnClick}
           />
           <NormalButton
             type="submit"

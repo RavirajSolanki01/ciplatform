@@ -12,7 +12,7 @@ export const Rating = ({ stars, total, isEmpty }) => {
   }
 
   return (
-    <div className="rating-div" data-testid="rating-test"  >
+    <div className="rating-div" data-testid="rating-test">
       {arr.map((x, key) => {
         return x === "star" ? (
           <img
