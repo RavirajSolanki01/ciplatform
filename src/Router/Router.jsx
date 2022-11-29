@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home, Login, Mission, PrivacyPolicy, StoryPage } from "../Components";
+import { Admin } from "../Components/Admin/Admin";
 import { ShareStory } from "../Components/ShareStory/ShareStory";
 import { StoryDetail } from "../Components/StoryDetail/StoryDetail";
 import UserEditProfile from "../Components/UserEditProfile";
-
 
 export const Router = () => {
   return (
@@ -18,6 +18,7 @@ export const Router = () => {
         <Route exact path="/share-story" element={<ShareStory />} />
         <Route exact path="/story-detail" element={<StoryDetail />} />
         <Route exact path="/edit-profile" element={<UserEditProfile />} />
+        <Route exact path="/admin" element={<Admin />} />
       </Routes>
     </div>
   );

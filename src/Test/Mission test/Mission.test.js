@@ -466,90 +466,90 @@ describe("Missions test", () => {
         expect(totalSeats).toBeInTheDocument();
       });
 
-      // test("Total seats input should reflect Total seats value", () => {
-      //   openModalFun();
-      //   const totalSeats = screen.getByPlaceholderText(/Enter total seats/i);
-      //   fireEvent.change(totalSeats, {
-      //     target: { value: 21 },
-      //   });
-      //   expect(totalSeats.value).toEqual(JSON.stringify(21));
-      // });
+      test("Total seats input should reflect Total seats value", () => {
+        openModalFun();
+        const totalSeats = screen.getByPlaceholderText(/Enter total seats/i);
+        fireEvent.change(totalSeats, {
+          target: { value: 21 },
+        });
+        expect(totalSeats.value).toEqual(JSON.stringify(21));
+      });
 
-      // test("Registration deadline input should be present", () => {
-      //   openModalFun();
-      //   const totalSeats = screen.getByPlaceholderText(
-      //     /Enter mission registration deadline/i
-      //   );
-      //   expect(totalSeats).toBeInTheDocument();
-      // });
+      test("Registration deadline input should be present", () => {
+        openModalFun();
+        const totalSeats = screen.getByPlaceholderText(
+          /Enter mission registration deadline/i
+        );
+        expect(totalSeats).toBeInTheDocument();
+      });
 
-      // test("Registration deadline input should reflect Registration deadline value", () => {
-      //   openModalFun();
-      //   const regDeadline = screen.getByPlaceholderText(
-      //     /Enter mission registration deadline/i
-      //   );
-      //   fireEvent.change(regDeadline, {
-      //     target: { value: "21st March, 2023" },
-      //   });
-      //   expect(regDeadline.value).toBe("21st March, 2023");
-      // });
+      test("Registration deadline input should reflect Registration deadline value", () => {
+        openModalFun();
+        const regDeadline = screen.getByPlaceholderText(
+          /Enter mission registration deadline/i
+        );
+        fireEvent.change(regDeadline, {
+          target: { value: "21st March, 2023" },
+        });
+        expect(regDeadline.value).toBe("21st March, 2023");
+      });
 
-      // test("Select theme selector should be present on modal open", () => {
-      //   openModalFun();
-      //   const themeSelect = screen.getByRole("option", {
-      //     name: "Select mission theme",
-      //   });
-      //   expect(themeSelect).toBeInTheDocument();
-      // });
-      // test("Select Skills selector should be present on modal open", () => {
-      //   openModalFun();
-      //   const missionSkill = screen.getByRole("option", {
-      //     name: "Select mission Skills",
-      //   });
-      //   expect(missionSkill).toBeInTheDocument();
-      // });
+      test("Select theme selector should be present on modal open", () => {
+        openModalFun();
+        const themeSelect = screen.getByRole("option", {
+          name: "Select mission theme",
+        });
+        expect(themeSelect).toBeInTheDocument();
+      });
+      test("Select Skills selector should be present on modal open", () => {
+        openModalFun();
+        const missionSkill = screen.getByRole("option", {
+          name: "Select mission Skills",
+        });
+        expect(missionSkill).toBeInTheDocument();
+      });
 
-      // test("Upload button should be present on modal open", () => {
-      //   openModalFun();
-      //   const uploadBtn = document.getElementById("upload-img");
-      //   expect(uploadBtn).toBeInTheDocument();
-      // });
-      // test("Upload resume button should be present on modal open", () => {
-      //   openModalFun();
-      //   const uploadResumeBtn = document.getElementById("upload-resume");
-      //   expect(uploadResumeBtn).toBeInTheDocument();
-      // });
+      test("Upload button should be present on modal open", () => {
+        openModalFun();
+        const uploadBtn = document.getElementById("upload-img");
+        expect(uploadBtn).toBeInTheDocument();
+      });
+      test("Upload resume button should be present on modal open", () => {
+        openModalFun();
+        const uploadResumeBtn = document.getElementById("upload-resume");
+        expect(uploadResumeBtn).toBeInTheDocument();
+      });
 
-      // test("Select availability selector should be present on modal open", () => {
-      //   openModalFun();
-      //   const availibility = screen.getByRole("option", {
-      //     name: "Select availability",
-      //   });
-      //   expect(availibility).toBeInTheDocument();
-      // });
+      test("Select availability selector should be present on modal open", () => {
+        openModalFun();
+        const availibility = screen.getByRole("option", {
+          name: "Select availability",
+        });
+        expect(availibility).toBeInTheDocument();
+      });
 
-      // test("Cancel button should be present", () => {
-      //   openModalFun();
-      //   const cancelBtn = screen.getByText(/Cancel/i);
-      //   expect(cancelBtn).toBeInTheDocument();
-      // });
-      // test("Cancel button click should remove modal", () => {
-      //   openModalFun();
-      //   const cancelBtn = screen.getByText(/Cancel/i);
-      //   const modal = screen.getByTestId("new-mission-form");
-      //   fireEvent.click(cancelBtn);
-      //   expect(modal).not.toBeInTheDocument();
-      // });
+      test("Cancel button should be present", () => {
+        openModalFun();
+        const cancelBtn = screen.getByText(/Cancel/i);
+        expect(cancelBtn).toBeInTheDocument();
+      });
+      test("Cancel button click should remove modal", () => {
+        openModalFun();
+        const cancelBtn = screen.getByText(/Cancel/i);
+        const modal = screen.getByTestId("new-mission-form");
+        fireEvent.click(cancelBtn);
+        expect(modal).not.toBeInTheDocument();
+      });
 
-      // test("Submit button should be present", () => {
-      //   openModalFun();
-      //   const submitBtn = screen.getAllByText(/submit/i);
-      //   if (submitBtn.length) {
-      //     submitBtn.forEach((element) => {
-      //       expect(element).toBeInTheDocument();
-      //     });
-      //   }
-      // });
+      test("Submit button should be present", () => {
+        openModalFun();
+        const submitBtn = screen.getAllByText(/submit/i);
+        if (submitBtn.length) {
+          submitBtn.forEach((element) => {
+            expect(element).toBeInTheDocument();
+          });
+        }
+      });
     });
   });
 });

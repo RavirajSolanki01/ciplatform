@@ -28,4 +28,11 @@ describe("Mission Carousel test", () => {
       expect(infoClass[0]).toBeInTheDocument();
     }
   });
+
+  test("Progressbar should br on page load",()=>{
+    render(<MockMissionCarousel />);
+    const progressbar = screen.getByTestId("progressbar-test")
+    expect(progressbar).toBeInTheDocument();
+})
+
 });

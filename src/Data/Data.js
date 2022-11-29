@@ -599,3 +599,46 @@ export const allSkills = [
   "Environmental Policy",
   "Farming",
 ];
+
+export const navigateData = [
+  {
+    id: 1,
+    img: "user.svg",
+    name: "User",
+  },
+  {
+    id: 2,
+    img: "page.svg",
+    name: "CMS Page",
+  },
+  {
+    id: 3,
+    img: "goal.svg",
+    name: "Mission",
+  },
+  {
+    id: 4,
+    img: "theme.svg",
+    name: "Mission Theme",
+  },
+  {
+    id: 5,
+    img: "skill.svg",
+    name: "Mission Skills",
+  },
+  {
+    id: 6,
+    img: "mission.svg",
+    name: "Mission Application",
+  },
+  {
+    id: 7,
+    img: "story.svg",
+    name: "Story",
+  },
+  {
+    id: 8,
+    img: "banner.svg",
+    name: "Banner Management",
+  },
+];
