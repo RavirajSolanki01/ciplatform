@@ -1,25 +1,33 @@
-import React from "react";
+import moment from "moment/moment";
+import { useEffect, useState } from "react";
+import { DropDown } from "../../../Helper";
 
+const btnlist = [
+  { name: "Item 1", link: "www.google.com" },
+  { name: "Item 2", link: "www.google.com" },
+  { name: "Item 3", link: "www.google.com" },
+];
 export const Header = () => {
-  var currentdate = new Date();
-  var datetime =
-    "Last Sync: " +
-    currentdate.getDate() +
-    "/" +
-    (currentdate.getMonth() + 1) +
-    "/" +
-    currentdate.getFullYear() +
-    " @ " +
-    currentdate.getHours() +
-    ":" +
-    currentdate.getMinutes() +
-    ":" +
-    currentdate.getSeconds();
+  const [state, setState] = useState("");
+  useEffect(() => {
+    setInterval(() => {
+      setState(moment().format("LLLL"));
+    }, 1000);
+  }, []);
 
   return (
     <div className="admin-header">
-      <span>{datetime}</span>
-      <span>Profile</span>
+      <span>{state}</span>
+      <div className="header-profile">
+        <img
+          className="profile-img"
+          src={require("../../../Assets/signs/group-32.png")}
+          alt="profile"
+        />
+        <div className="navbar-profile-drop-div">
+          <DropDown name="Evan Donohue" items={btnlist} />
+        </div>
+      </div>
     </div>
   );
 };

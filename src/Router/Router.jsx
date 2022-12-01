@@ -18,7 +18,7 @@ export const Router = () => {
         <Route exact path="/share-story" element={<ShareStory />} />
         <Route exact path="/story-detail" element={<StoryDetail />} />
         <Route exact path="/edit-profile" element={<UserEditProfile />} />
-        <Route exact path="/admin" element={<Admin />} />
+        <Route exact path="/admin/*" element={<Admin />} />
       </Routes>
     </div>
   );

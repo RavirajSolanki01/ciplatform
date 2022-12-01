@@ -7,6 +7,7 @@ import { BorderButton } from "./BorderButton";
 import { Progressbar } from "./Progressbar";
 import { CustomModal } from "./CustomModal";
 import { InfoBox } from "./InfoBox";
+import { AdminSearchbar } from "./AdminSearchbar";
 
 export {
   NormalButton,
@@ -18,4 +19,5 @@ export {
   Progressbar,
   CustomModal,
   InfoBox,
+  AdminSearchbar,
 };

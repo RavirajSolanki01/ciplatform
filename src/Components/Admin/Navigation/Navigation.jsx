@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import "../admin.css";
 import { navigateData } from "../../../Data/Data";
+import { useNavigate } from "react-router-dom";
 
 export const Navigation = () => {
+  const navigate = useNavigate();
   const [active, setActive] = useState(1);
+
+  const handleClick = (id, route) => {
+    setActive(id);
+    navigate(route);
+  };
 
   return (
     <div className="admin-navigation">
@@ -16,7 +23,7 @@ export const Navigation = () => {
               ? "admin-navigation-item-dark admin-navigation-common"
               : "admin-navigation-common"
           }
-          onClick={() => setActive(nav.id)}
+          onClick={() => handleClick(nav.id, nav.route)}
         >
           <img
             src={require(`../../../Assets/navigation/${

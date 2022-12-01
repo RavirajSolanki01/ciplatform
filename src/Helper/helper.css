@@ -23,12 +23,12 @@
   height: 56px;
   padding: 15px 20px;
 }
-.normal-select > select> option {
+.normal-select > select > option {
   color: #757575;
   height: 2rem;
   padding: 1rem;
 }
-.normal-select>select{
+.normal-select > select {
   color: #757575;
 }
 /* .normal > input:focus, */
@@ -105,8 +105,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   align-items: center;
   justify-content: center;
 }
-
-.normal-btn > img {
+.add-img{
+  margin-right: 10px;
+}
+.arrow-img {
   margin-left: 20px;
 }
 
@@ -334,4 +336,41 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-weight: bold;
   color: #414141;
   font-size: 22px;
+}
+
+/* Titlehead CSS */
+
+.title-head {
+  color: #333;
+  font-size: 30px;
+  text-align: left;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 14px;
+}
+.title-head > span {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #333;
+}
+
+/* Searchbar CSS */
+.search-bar{
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 48px;
+  width: 400px;
+  padding: 16px 13px 16px 13px;
+  border-radius: 3px;
+  box-shadow: 1px 0.3px 3px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px #d9d9d9;
+  background-color: #fff;
+  margin: 30px 0;
+}
+.search-bar>input{
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 14px;
 }
