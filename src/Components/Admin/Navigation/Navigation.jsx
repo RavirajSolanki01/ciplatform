@@ -1,39 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../admin.css";
 import { navigateData } from "../../../Data/Data";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Navigation = () => {
-  const navigate = useNavigate();
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(navigateData[0].name);
 
-  const handleClick = (id, route) => {
-    setActive(id);
-    navigate(route);
+  const handleClick = (route) => {
+    setActive(route);
   };
+
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    setActive(pathname.toString().match(/(?<=admin\/)\w*/)[0]);
+  }, []);
 
   return (
     <div className="admin-navigation">
       <span>NAVIGATION</span>
       {navigateData?.map((nav) => (
-        <div
+        <NavLink
+          to={nav.route}
           key={nav.id}
-          className={
-            active === nav.id
-              ? "admin-navigation-item-dark admin-navigation-common"
-              : "admin-navigation-common"
-          }
-          onClick={() => handleClick(nav.id, nav.route)}
+          className="admin-navigation-common"
+          onClick={() => handleClick(nav.route)}
         >
           <img
             src={require(`../../../Assets/navigation/${
-              active === nav.id ? "dark" + nav.img : nav.img
+              active === nav.route ? "dark" + nav.img : nav.img
             }`)}
             alt="img"
             style={{ height: "22px", width: "22px" }}
           />
           {nav.name}
-        </div>
+        </NavLink>
       ))}
     </div>
   );
