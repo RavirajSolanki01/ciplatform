@@ -62,6 +62,12 @@
 .admin-edit-status {
   text-align: left;
 }
+.admin-edit-cms-btn {
+  display: flex;
+  justify-content: end;
+  margin: 34px 0 24px 0;
+  gap: 10px;
+}
 
 /*                  UserPage CSS                   */
 
@@ -170,6 +176,9 @@ tr > td > h4 {
   gap: 10px;
   margin-top: 55px;
 }
+.admin-delet-cancel-btn > button {
+  cursor: pointer;
+}
 .admin-delet-cancel-btn {
   width: 119px;
   height: 48px;
@@ -181,6 +190,7 @@ tr > td > h4 {
 .admin-delet-delete-btn > button {
   border-color: #f88634;
   color: #f88634;
+  cursor: pointer;
 }
 
 /*             Navigation CSS            */

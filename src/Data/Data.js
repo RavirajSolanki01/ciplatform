@@ -94,6 +94,15 @@ export const dropdowndata = [
   { name: "Item-3", value: "Item3", link: "www.google.com" },
 ];
 
+export const statusData = [
+  { name: "Active", value: "Active", link: "www.google.com" },
+  { name: "Pending", value: "Pending", link: "www.google.com" },
+  { name: "Failed", value: "Failed", link: "www.google.com" },
+];
+
+
+
+
 export const tagsdata = [
   { id: 1, element: "UAE" },
   { id: 2, element: "India" },
@@ -747,58 +756,78 @@ export const cmsData = [
     title:
       "Desktop publishing software like Aldus PageMaker including versions the leap into electronic typesetting.",
     status: "Active",
+    slug:"Plantation and Afforestation",
     id: 132422,
+    description:`<h1><span style="color: rgb(230, 0, 0);">Hello World</span></h1>`
   },
   {
     title:
       "Various versions have evolved over the years Many desktop publishing packages and web page editors",
     status: "Active",
+    slug:"Plantation and Afforestation",
     id: 132423,
+    description:`<h2><strong>My Desktop is the best one</strong></h2><ul><li>Reasons</li></ul>`
   },
   {
     title: "A Latin professor at Hampden-Sydney College in Virginia",
     status: "Active",
+    slug:"Plantation and Afforestation",
     id: 132424,
+    description:"done"
   },
   {
     title:
       "Suffered alteration in some form, by injected humour, or randomised words",
-    status: "Active",
+    status: "Pending",
+    slug:"Plantation and Afforestation",
     id: 132425,
+    description:"done"
   },
   {
     title:
       "Et harum quidem rerum facilis est et expedita distinctio., very popular during the Renaissance.",
     status: "Active",
+    slug:"Plantation and Afforestation",
     id: 132426,
+    description:"done"
   },
   {
     title:
       "Maiores alias consequatur aut perferendis doloribus asperiores repellat",
-    status: "Active",
+    status: "Pending",
+    slug:"Plantation and Afforestation",
     id: 132427,
+    description:"done"
   },
   {
     title:
       "Our power of choice is untrammelled and when nothing prevents obest.",
     status: "Active",
+    slug:"Plantation and Afforestation",
     id: 132428,
+    description:"done"
   },
   {
     title: "Beguiled and demoralized by the charms of pleasure of the moment,",
-    status: "Active",
+    status: "Pending",
+    slug:"Plantation and Afforestation",
     id: 132429,
+    description:"done"
   },
   {
     title:
       "Untrammelled and when nothing prevents our being able to do what we like best .10.32 and 1.10.33 from 'de Finibus Bono'.",
     status: "Active",
+    slug:"Plantation and Afforestation",
     id: 132430,
+    description:"done"
   },
   {
     title:
       "Oluptates repudiandae sint et molestiae non recusandae.",
-    status: "Active",
+    status: "Failed",
+    slug:"Plantation and Afforestation",
     id: 132431,
+    description:"done"
   },
 ];

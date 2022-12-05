@@ -12,6 +12,7 @@ export const NormalInput = ({
   placeholder,
   isDisabled,
   value,
+  onChange,
 }) => {
   const ref = useRef();
   const [first, setfirst] = useState("blur");
@@ -33,6 +34,7 @@ export const NormalInput = ({
           id={htmlfor}
           placeholder={placeholder}
           ref={ref}
+          onChange={onChange}
           onFocus={
             type === "date"
               ? () => {

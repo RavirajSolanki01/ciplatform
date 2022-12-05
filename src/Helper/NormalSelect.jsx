@@ -7,11 +7,19 @@ export const NormalSelect = ({
   items,
   placeholder,
   className,
+  value,
+  onChange,
 }) => {
   return (
     <div className={className ? `${className} normal-select` : "normal-select"}>
       <label htmlFor={htmlfor}>{label}</label>
-      <select name={name || "form-select"} id={htmlfor} data-testid="normal-select" >
+      <select
+        value={value}
+        name={name || "form-select"}
+        id={htmlfor}
+        data-testid="normal-select"
+        onChange={onChange}
+      >
         <option value="default">{placeholder}</option>
         {items.map((item) => (
           <option

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../admin.css";
 import ReactPaginate from "react-paginate";
-import { cmsData, dropdowndata, formats, modules } from "../../../Data/Data";
+import { cmsData, formats, modules, statusData } from "../../../Data/Data";
 import {
   AdminSearchbar,
   BorderButton,
@@ -17,8 +17,18 @@ export const CMSPage = () => {
   const [state, setState] = useState(cmsData);
   const [curData, setCurData] = useState(state);
   const [isOpen, setIsOpen] = useState(false);
-  const [isEdit, setIsEdit] = useState(false);
-  const [deleteId, setDeleteId] = useState();
+  const [dataId, setDataId] = useState({
+    isEdit: false,
+    editId: 1,
+    deleteId: 1,
+  });
+  const [isEditData, setIsEditData] = useState();
+
+  const onSave = () => {
+    setCurData(curData.map((e) => (e.id === dataId.editId ? isEditData : e)));
+    setState(curData.map((e) => (e.id === dataId.editId ? isEditData : e)));
+    setDataId((pre) => ({ ...pre, isEdit: false }));
+  };
 
   const handleChange = (e) => {
     setState(
@@ -29,13 +39,19 @@ export const CMSPage = () => {
   };
   const handleDeleteFun = (e) => {
     setIsOpen(true);
-    setDeleteId(e);
+    setDataId((pre) => ({ ...pre, deleteId: e }));
   };
   const handleDelete = () => {
     setIsOpen(false);
-    setCurData(state.filter((data) => data.id !== deleteId));
-    setState(state.filter((data) => data.id !== deleteId));
+    setCurData(state.filter((data) => data.id !== dataId.deleteId));
+    setState(state.filter((data) => data.id !== dataId.deleteId));
   };
+
+  const handleEditFun = (id = null) => {
+    setDataId((pre) => ({ ...pre, isEdit: true, editId: id }));
+    setIsEditData(curData.filter((data) => data.id === id)[0]);
+  };
+
   return (
     <div>
       {isOpen && (
@@ -63,7 +79,7 @@ export const CMSPage = () => {
         </CustomModal>
       )}
 
-      {isEdit ? (
+      {!dataId?.isEdit ? (
         <>
           <TitleHead title="CMS Page" />
           <div className="admin-search-plus">
@@ -72,7 +88,7 @@ export const CMSPage = () => {
               isAdd
               name="Add"
               className="admin-add-class"
-              // btnClick={() => setIsOpen(true)}
+              btnClick={() => handleEditFun()}
             />
           </div>
 
@@ -98,7 +114,7 @@ export const CMSPage = () => {
                         {data.status}
                       </td>
                       <td>
-                        <button>
+                        <button onClick={() => handleEditFun(data.id)}>
                           <img
                             src={
                               require("../../../Assets/signs/edit.svg").default
@@ -154,28 +170,76 @@ export const CMSPage = () => {
           </div>
         </>
       ) : (
-        <div className="admin-edit-div">
-          <div className="admin-edit-title">Add</div>
-          <div className="admin-edit-layout">
-            <NormalInput className="admin-edit-title-input" label="Title" />
-            <div className="admin-edit-quill">
-              <label htmlFor="description">Description</label>
-              <ReactQuill
-                id="description"
-                theme="snow"
-                modules={modules}
-                formats={formats}
-                // onChange={(e) => console.log(e)}
-                className="share-story-quill"
-              />
+        <>
+          <div className="admin-edit-div">
+            <div className="admin-edit-title">
+              {dataId?.editId ? "Edit" : "Add"}
             </div>
-            <NormalInput className="admin-edit-title-input" label="Slug" />
-            <div className="admin-edit-status" >
-              <label htmlFor="">Status</label>
-              <NormalSelect items={dropdowndata} />
+            <div className="admin-edit-layout">
+              <NormalInput
+                className="admin-edit-title-input"
+                label="Title"
+                value={isEditData?.title}
+                onChange={(e) =>
+                  setIsEditData((pre) => ({ ...pre, title: e.target.value }))
+                }
+              />
+              <div className="admin-edit-quill">
+                <label htmlFor="description">Description</label>
+                <ReactQuill
+                  id="description"
+                  theme="snow"
+                  modules={modules}
+                  formats={formats}
+                  value={isEditData?.description}
+                  onChange={(e) =>
+                    setIsEditData((pre) => ({
+                      ...pre,
+                      description: e,
+                    }))
+                  }
+                  className="share-story-quill"
+                />
+              </div>
+              <NormalInput
+                className="admin-edit-title-input"
+                label="Slug"
+                value={isEditData?.slug}
+                onChange={(e) =>
+                  setIsEditData((pre) => ({
+                    ...pre,
+                    slug: e.target.value,
+                  }))
+                }
+              />
+              <div className="admin-edit-status">
+                <label htmlFor="">Status</label>
+                <NormalSelect
+                  items={statusData}
+                  value={isEditData?.status}
+                  onChange={(e) =>
+                    setIsEditData((pre) => ({
+                      ...pre,
+                      status: e.target.value,
+                    }))
+                  }
+                />
+              </div>
             </div>
           </div>
-        </div>
+          <div className="admin-edit-cms-btn">
+            <BorderButton
+              className="admin-delet-cancel-btn"
+              name="Cancel"
+              btnClick={() => setDataId((pre) => ({ ...pre, isEdit: false }))}
+            />
+            <BorderButton
+              className="admin-delet-delete-btn"
+              name="Save"
+              btnClick={onSave}
+            />
+          </div>
+        </>
       )}
     </div>
   );
