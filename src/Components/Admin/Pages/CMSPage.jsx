@@ -17,19 +17,25 @@ export const CMSPage = () => {
   const [state, setState] = useState(cmsData);
   const [curData, setCurData] = useState(state);
   const [isOpen, setIsOpen] = useState(false);
+  const [isEditData, setIsEditData] = useState();
   const [dataId, setDataId] = useState({
     isEdit: false,
     editId: 1,
     deleteId: 1,
   });
-  const [isEditData, setIsEditData] = useState();
+
+  console.log(isEditData, "isEditData");
 
   const onSave = () => {
-    setCurData(curData.map((e) => (e.id === dataId.editId ? isEditData : e)));
-    setState(curData.map((e) => (e.id === dataId.editId ? isEditData : e)));
+    if (dataId.editId === null) {
+      setCurData((pre) => [...pre, isEditData]);
+      setState((pre) => [...pre, isEditData]);
+    } else {
+      setCurData(curData.map((e) => (e.id === dataId.editId ? isEditData : e)));
+      setState(curData.map((e) => (e.id === dataId.editId ? isEditData : e)));
+    }
     setDataId((pre) => ({ ...pre, isEdit: false }));
   };
-
   const handleChange = (e) => {
     setState(
       curData.filter((data) => {
@@ -46,10 +52,11 @@ export const CMSPage = () => {
     setCurData(state.filter((data) => data.id !== dataId.deleteId));
     setState(state.filter((data) => data.id !== dataId.deleteId));
   };
-
   const handleEditFun = (id = null) => {
     setDataId((pre) => ({ ...pre, isEdit: true, editId: id }));
-    setIsEditData(curData.filter((data) => data.id === id)[0]);
+    if (id) {
+      setIsEditData(curData.filter((data) => data.id === id)[0]);
+    }
   };
 
   return (

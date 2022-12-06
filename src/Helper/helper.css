@@ -105,7 +105,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   align-items: center;
   justify-content: center;
 }
-.add-img{
+.add-img {
   margin-right: 10px;
 }
 .arrow-img {
@@ -354,7 +354,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* Searchbar CSS */
-.search-bar{
+.search-bar {
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -368,7 +368,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #fff;
   margin: 30px 0;
 }
-.search-bar>input{
+.search-bar > input {
   outline: none;
   border: none;
   width: 100%;

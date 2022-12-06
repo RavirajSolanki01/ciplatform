@@ -61,6 +61,7 @@
 }
 .admin-edit-status {
   text-align: left;
+  margin-top: 31px;
 }
 .admin-edit-cms-btn {
   display: flex;
@@ -191,6 +192,16 @@ tr > td > h4 {
   border-color: #f88634;
   color: #f88634;
   cursor: pointer;
+}
+
+/*            AdminMIssion CSS           */
+
+.admin-mission-date-div {
+  display: flex;
+  gap: 10px;
+}
+.admin-mission-date-div > div {
+width: 100%;
 }
 
 /*             Navigation CSS            */

@@ -94,13 +94,6 @@ export const dropdowndata = [
   { name: "Item-3", value: "Item3", link: "www.google.com" },
 ];
 
-export const statusData = [
-  { name: "Active", value: "Active", link: "www.google.com" },
-  { name: "Pending", value: "Pending", link: "www.google.com" },
-  { name: "Failed", value: "Failed", link: "www.google.com" },
-];
-
-
 
 
 export const tagsdata = [
@@ -662,6 +655,7 @@ export const navigateData = [
 
 export const adminUsrData = [
   {
+    id: 121,
     fName: "Adam",
     lName: "Baldwin",
     email: "Adam12546@yahs.com",
@@ -670,6 +664,7 @@ export const adminUsrData = [
     status: "Active",
   },
   {
+    id: 122,
     fName: "Peter",
     lName: "Wallace",
     email: "Peter42546@yahs.com",
@@ -678,6 +673,7 @@ export const adminUsrData = [
     status: "Active",
   },
   {
+    id: 123,
     fName: "Jacob",
     lName: "Dunn",
     email: "Jacob25546@yahs.com",
@@ -686,6 +682,7 @@ export const adminUsrData = [
     status: "Active",
   },
   {
+    id: 124,
     fName: "Terry",
     lName: "Adams",
     email: "Terry25546@yahs.com",
@@ -694,6 +691,7 @@ export const adminUsrData = [
     status: "Active",
   },
   {
+    id: 125,
     fName: "Peg",
     lName: "Legge",
     email: "Peg125546@yahs.com",
@@ -702,6 +700,7 @@ export const adminUsrData = [
     status: "Active",
   },
   {
+    id: 126,
     fName: "Aida",
     lName: "Bugg",
     email: "Aida425546@yahs.com",
@@ -710,6 +709,7 @@ export const adminUsrData = [
     status: "Active",
   },
   {
+    id: 127,
     fName: "Olive",
     lName: "Yew",
     email: "Olive25546@yahs.com",
@@ -718,6 +718,7 @@ export const adminUsrData = [
     status: "Active",
   },
   {
+    id: 128,
     fName: "Peter",
     lName: "Wallace",
     email: "Peter45546@yahs.com",
@@ -726,6 +727,7 @@ export const adminUsrData = [
     status: "Active",
   },
   {
+    id: 129,
     fName: "Allie",
     lName: "Grater",
     email: "Teri145546@yahs.com",
@@ -734,6 +736,7 @@ export const adminUsrData = [
     status: "Active",
   },
   {
+    id: 130,
     fName: "Rose",
     lName: "Bush",
     email: "Rose45546@yahs.com",
@@ -742,6 +745,7 @@ export const adminUsrData = [
     status: "Active",
   },
   {
+    id: 131,
     fName: "jack",
     lName: "Close",
     email: "jack8746@yahs.com",
@@ -756,78 +760,140 @@ export const cmsData = [
     title:
       "Desktop publishing software like Aldus PageMaker including versions the leap into electronic typesetting.",
     status: "Active",
-    slug:"Plantation and Afforestation",
+    slug: "Plantation and Afforestation",
     id: 132422,
-    description:`<h1><span style="color: rgb(230, 0, 0);">Hello World</span></h1>`
+    description: `<h1><span style="color: rgb(230, 0, 0);">Hello World</span></h1>`,
   },
   {
     title:
       "Various versions have evolved over the years Many desktop publishing packages and web page editors",
     status: "Active",
-    slug:"Plantation and Afforestation",
+    slug: "Plantation and Afforestation",
     id: 132423,
-    description:`<h2><strong>My Desktop is the best one</strong></h2><ul><li>Reasons</li></ul>`
+    description: `<h2><strong>My Desktop is the best one</strong></h2><ul><li>Reasons</li></ul>`,
   },
   {
     title: "A Latin professor at Hampden-Sydney College in Virginia",
     status: "Active",
-    slug:"Plantation and Afforestation",
+    slug: "Plantation and Afforestation",
     id: 132424,
-    description:"done"
+    description: "done",
   },
   {
     title:
       "Suffered alteration in some form, by injected humour, or randomised words",
     status: "Pending",
-    slug:"Plantation and Afforestation",
+    slug: "Plantation and Afforestation",
     id: 132425,
-    description:"done"
+    description: "done",
   },
   {
     title:
       "Et harum quidem rerum facilis est et expedita distinctio., very popular during the Renaissance.",
     status: "Active",
-    slug:"Plantation and Afforestation",
+    slug: "Plantation and Afforestation",
     id: 132426,
-    description:"done"
+    description: "done",
   },
   {
     title:
       "Maiores alias consequatur aut perferendis doloribus asperiores repellat",
     status: "Pending",
-    slug:"Plantation and Afforestation",
+    slug: "Plantation and Afforestation",
     id: 132427,
-    description:"done"
+    description: "done",
   },
   {
     title:
       "Our power of choice is untrammelled and when nothing prevents obest.",
     status: "Active",
-    slug:"Plantation and Afforestation",
+    slug: "Plantation and Afforestation",
     id: 132428,
-    description:"done"
+    description: "done",
   },
   {
     title: "Beguiled and demoralized by the charms of pleasure of the moment,",
     status: "Pending",
-    slug:"Plantation and Afforestation",
+    slug: "Plantation and Afforestation",
     id: 132429,
-    description:"done"
+    description: "done",
   },
   {
     title:
       "Untrammelled and when nothing prevents our being able to do what we like best .10.32 and 1.10.33 from 'de Finibus Bono'.",
     status: "Active",
-    slug:"Plantation and Afforestation",
+    slug: "Plantation and Afforestation",
     id: 132430,
-    description:"done"
+    description: "done",
   },
   {
-    title:
-      "Oluptates repudiandae sint et molestiae non recusandae.",
+    title: "Oluptates repudiandae sint et molestiae non recusandae.",
     status: "Failed",
-    slug:"Plantation and Afforestation",
+    slug: "Plantation and Afforestation",
     id: 132431,
-    description:"done"
+    description: "done",
   },
 ];
+
+export const missionData = [
+  {
+    id: 12345,
+    title: "Desktop publishing software",
+    type: "Time",
+    startDate: "05/02/2019",
+    endDate: "15/02/2019",
+  },
+  {
+    id: 12346,
+    title: "Various versions have evolved over",
+    type: "Goal",
+    startDate: "10/02/2019",
+    endDate: "20/02/2020",
+  },
+  {
+    id: 12335,
+    title: "A Latin professor at Hampden-Sydney",
+    type: "Time",
+    startDate: "04/06/2020",
+    endDate: "24/06/2020",
+  },
+  {
+    id: 12385,
+    title: "Suffered alteration in some form",
+    type: "Goal",
+    startDate: "01/08/2020",
+    endDate: "08/08/2020",
+  },
+  {
+    id: 12347,
+    title: "Et harum quidem rerum facilis est",
+    type: "Goal",
+    startDate: "01/08/2020",
+    endDate: "08/08/2020",
+  },
+  {
+    id: 14307,
+    title: "Maiores alias consequatur aut",
+    type: "Goal",
+    startDate: "12/06/2021",
+    endDate: "19/06/2021",
+  },
+];
+
+
+export const statusData = [
+  { name: "Active", value: "Active" },
+  { name: "Pending", value: "Pending" },
+  { name: "Failed", value: "Failed" },
+];
+export const departmentData = [
+  { name: "HR", value: "HR" },
+  { name: "Sales", value: "Sales" },
+  { name: "Networking", value: "Networking" },
+  { name: "Technical", value: "Technical" },
+];
+
+export const missionTypeData = [
+  { name: "Time", value: "Time" },
+  { name: "Goal", value: "Goal" },
+]

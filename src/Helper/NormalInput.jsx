@@ -13,6 +13,8 @@ export const NormalInput = ({
   isDisabled,
   value,
   onChange,
+  posX,
+  posY,
 }) => {
   const ref = useRef();
   const [first, setfirst] = useState("blur");
@@ -25,7 +27,11 @@ export const NormalInput = ({
           className={
             type === "date" && first === "blur" ? "normal-date" : undefined
           }
-          style={{ background: isDisabled ? "#ebe7e7" : null }}
+          style={{
+            background: isDisabled ? "#ebe7e7" : null,
+            backgroundPositionX: posX,
+            backgroundPositionY: posY,
+          }}
           data-testid="normal-input"
           type={type === "date" ? "text" : type}
           name={name}
