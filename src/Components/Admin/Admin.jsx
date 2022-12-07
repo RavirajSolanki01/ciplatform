@@ -6,6 +6,8 @@ import { Route, Routes } from "react-router-dom";
 import { UserPage } from "./Pages/UserPage";
 import { CMSPage } from "./Pages/CMSPage";
 import { AdminMission } from "./Pages/AdminMission";
+import { MissionApplication } from "./Pages/MissionApplication";
+import { AdminStory } from "./Pages/AdminStory";
 
 export const Admin = () => {
   return (
@@ -19,6 +21,8 @@ export const Admin = () => {
               <Route exact path="/user" element={<UserPage />} />
               <Route exact path="/cms" element={<CMSPage />} />
               <Route exact path="/mission" element={<AdminMission />} />
+              <Route exact path="/missionapplication" element={<MissionApplication />} />
+              <Route exact path="/story" element={<AdminStory />} />
             </Routes>
           </div>
         </div>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import "../admin.css";
 import ReactPaginate from "react-paginate";
-import { missionData, missionTypeData } from "../../../Data/Data";
+import { adminStory } from "../../../Data/Data";
 import {
   AdminSearchbar,
   BorderButton,
@@ -11,10 +10,9 @@ import {
   NormalSelect,
 } from "../../../Helper";
 import { TitleHead } from "../../../Helper/TitleHead";
-import moment from "moment";
 
-export const AdminMission = () => {
-  const [state, setState] = useState(missionData);
+export const AdminStory = () => {
+  const [state, setState] = useState(adminStory);
   const [curData, setCurData] = useState(state);
   const [isOpen, setIsOpen] = useState(false);
   const [isEditData, setIsEditData] = useState();
@@ -37,7 +35,14 @@ export const AdminMission = () => {
   const handleChange = (e) => {
     setState(
       curData.filter((data) => {
-        return data.title.toLowerCase().includes(e.target.value.toLowerCase());
+        return (
+          data.missionTitle
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase()) ||
+          data.userName.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          data.missionId.toString().includes(e.target.value) ||
+          data.userId.toString().includes(e.target.value)
+        );
       })
     );
   };
@@ -86,25 +91,18 @@ export const AdminMission = () => {
 
       {!dataId?.isEdit ? (
         <>
-          <TitleHead title="Mission" />
+          <TitleHead title="User" />
           <div className="admin-search-plus">
             <AdminSearchbar inputChange={handleChange} />
-            <NormalButton
-              isAdd
-              name="Add"
-              className="admin-add-class"
-              btnClick={() => handleEditFun()}
-            />
           </div>
 
           <div className="user-table-div">
             <table className="admin-user-table">
               <thead className="admin-user-table-head">
                 <tr>
+                  <th>Story Title</th>
+                  <th>Full Name</th>
                   <th>Mission Title</th>
-                  <th>Mission Type</th>
-                  <th>Start Date</th>
-                  <th>End Date</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -112,15 +110,26 @@ export const AdminMission = () => {
                 {state.length ? (
                   state?.map((data) => (
                     <tr key={data.id}>
-                      <td>{data.title}</td>
-                      <td>{data.type}</td>
-                      <td>{data.startDate}</td>
-                      <td>{data.endDate}</td>
+                      <td>{data.storyTitle}</td>
+                      <td>{data.fullName}</td>
+                      <td>{data.missionTitle}</td>
+                      
                       <td>
+                        <button onClick={() => handleEditFun(data.id)}>
+                          View1
+                        </button>
                         <button onClick={() => handleEditFun(data.id)}>
                           <img
                             src={
-                              require("../../../Assets/signs/edit.svg").default
+                              require("../../../Assets/signs/check.svg").default
+                            }
+                            alt="edit"
+                          />
+                        </button>
+                        <button onClick={() => handleEditFun(data.id)}>
+                          <img
+                            src={
+                              require("../../../Assets/signs/cancelmark.svg").default
                             }
                             alt="edit"
                           />
@@ -181,55 +190,28 @@ export const AdminMission = () => {
             <div className="admin-edit-layout">
               <NormalInput
                 className="admin-edit-title-input"
-                label="Mission Title"
-                value={isEditData?.title}
+                label="First Name"
+                value={isEditData?.fName}
                 onChange={(e) =>
-                  setIsEditData((pre) => ({ ...pre, title: e.target.value }))
+                  setIsEditData((pre) => ({ ...pre, fName: e.target.value }))
                 }
               />
-              <div className="admin-edit-status">
-                <label htmlFor="">Mission Type</label>
-                <NormalSelect
-                  items={missionTypeData}
-                  value={isEditData?.type}
-                  onChange={(e) =>
-                    setIsEditData((pre) => ({
-                      ...pre,
-                      type: e.target.value,
-                    }))
-                  }
-                />
-              </div>
-              <div className="admin-mission-date-div">
-                <NormalInput
-                  posX="702px"
-                  type="date"
-                  className="admin-edit-title-input"
-                  label="Start Date"
-                  // value={isEditData?.startDate}
-                  value={moment(isEditData?.startDate).format("DD/MM/YYYY")}
-                  onChange={(e) =>
-                    setIsEditData((pre) => ({
-                      ...pre,
-                      startDate: moment(e.target.value).format("DD/MM/YYYY"),
-                    }))
-                  }
-                />
-                <NormalInput
-                  posX="702px"
-                  type="date"
-                  className="admin-edit-title-input"
-                  label="End Date"
-                  value={isEditData?.endDate}
-                  // value={moment(isEditData?.endDate).format("DD/MM/YYYY")}
-                  onChange={(e) => {
-                    setIsEditData((pre) => ({
-                      ...pre,
-                      endDate: moment(e.target.value).format("DD/MM/YYYY"),
-                    }));
-                  }}
-                />
-              </div>
+              <NormalInput
+                className="admin-edit-title-input"
+                label="Last Name"
+                value={isEditData?.lName}
+                onChange={(e) =>
+                  setIsEditData((pre) => ({ ...pre, lName: e.target.value }))
+                }
+              />
+              <NormalInput
+                className="admin-edit-title-input"
+                label="Email"
+                value={isEditData?.email}
+                onChange={(e) =>
+                  setIsEditData((pre) => ({ ...pre, email: e.target.value }))
+                }
+              />
             </div>
           </div>
           <div className="admin-edit-cms-btn">

@@ -94,8 +94,6 @@ export const dropdowndata = [
   { name: "Item-3", value: "Item3", link: "www.google.com" },
 ];
 
-
-
 export const tagsdata = [
   { id: 1, element: "UAE" },
   { id: 2, element: "India" },
@@ -880,6 +878,146 @@ export const missionData = [
   },
 ];
 
+export const missionApplication = [
+  {
+    id: 1345,
+    missionTitle: "Desktop publishing software",
+    missionId: 5164978456,
+    userId: 1364978456,
+    userName: "Adam Baldwin",
+    applicationDate: "15/02/2019",
+  },
+  {
+    id: 1346,
+    missionTitle: "Various versions have evolved over",
+    missionId: 5164975623,
+    userId: 1364975623,
+    userName: "Peter Wallace",
+    applicationDate: "20/02/2020",
+  },
+  {
+    id: 1347,
+    missionTitle: "A Latin professor at Hampden-Sydney",
+    missionId: 5164975623,
+    userId: 1364975623,
+    userName: "Peter Wallace",
+    applicationDate: "20/02/2020",
+  },
+  {
+    id: 1348,
+    missionTitle: "Suffered alteration in some form",
+    missionId: 5164974556,
+    userId: 1364974556,
+    userName: "Peg Legg",
+    applicationDate: "08/08/2020",
+  },
+  {
+    id: 1358,
+    missionTitle: "Et harum quidem rerum facilis est",
+    missionId: 5164974569,
+    userId: 1364974569,
+    userName: "Aida Bugg",
+    applicationDate: "09/06/2021",
+  },
+  {
+    id: 1349,
+    missionTitle: "Maiores alias consequatur aut",
+    missionId: 5164974556,
+    userId: 1364974123,
+    userName: "Olive Yew",
+    applicationDate: "19/06/2021",
+  },
+  {
+    id: 1350,
+    missionTitle: "Our power of choice is untrammelled",
+    missionId: 5164974123,
+    userId: 1364974471,
+    userName: "Peter Wallace",
+    applicationDate: "05/06/2021",
+  },
+  {
+    id: 1351,
+    missionTitle: "Beguiled and demoralized by the charms",
+    missionId: 5164974471,
+    userId: 1364974461,
+    userName: "Teri Dactyl",
+    applicationDate: "05/08/2021",
+  },
+  {
+    id: 1352,
+    missionTitle: "Untrammelled and when nothing prevents",
+    missionId: 5164974461,
+    userId: 1364974465,
+    userName: "Allie Grater",
+    applicationDate: "12/08/2021",
+  },
+  {
+    id: 1353,
+    missionTitle: "Oluptates repudiandae sint et molestiae",
+    missionId: 5164974445,
+    userId: 1364974445,
+    userName: "Rose Bush",
+    applicationDate: "12/12/2021",
+  },
+];
+
+export const adminStory = [
+  {
+    id: 2332,
+    storyTitle: "Desktop publishing software also the leap into",
+    missionTitle: "Desktop publishing software",
+    fullName: "Adam Baldwin",
+  },
+  {
+    id: 2333,
+    storyTitle: "Various versions have evolved over sometimes",
+    missionTitle: "Various versions have evolved over",
+    fullName: "Peter Wallace",
+  },
+  {
+    id: 2334,
+    storyTitle: "A Latin professor at Hampden-Sydney  like Aldus PageMaker i",
+    missionTitle: "A Latin professor at Hampden-Sydney",
+    fullName: "Jacob Dunn",
+  },
+  {
+    id: 2335,
+    storyTitle: "Suffered alteration in some form still in their infancy.",
+    missionTitle: "Suffered alteration in some form",
+    fullName: "Peg Legge",
+  },
+  {
+    id: 2336,
+    storyTitle: "Et harum quidem rerum facilis est  make a type specimen book",
+    missionTitle: "Et harum quidem rerum facilis est",
+    fullName: "Aida Bugg",
+  },
+  {
+    id: 2337,
+    storyTitle: "Maiores alias consequatur aut doloribus asperiores repellat",
+    missionTitle: "Maiores alias consequatur aut",
+    fullName: "Olive Yew",
+  },
+  {
+    id: 2338,
+    storyTitle: "Our power of choice is untrammelled f business it will frequently",
+    missionTitle: "Our power of choice is untrammelled",
+    fullName: "Peter Wallace",
+  },
+  {
+    id: 2339,
+    storyTitle: "Beguiled and demoralized by the charms  to avoid worse pains",
+    missionTitle: "Beguiled and demoralized by the charms",
+    fullName: "Teri Dactyl",
+  },
+  {
+    id: 2349,
+    storyTitle: "Beguiled and demoralized by the charms  to avoid worse pains",
+    missionTitle: "Beguiled and demoralized by the charms",
+    fullName: "Teri Dactyl",
+  },
+
+];
 
 export const statusData = [
   { name: "Active", value: "Active" },
@@ -896,4 +1034,4 @@ export const departmentData = [
 export const missionTypeData = [
   { name: "Time", value: "Time" },
   { name: "Goal", value: "Goal" },
-]
+];
