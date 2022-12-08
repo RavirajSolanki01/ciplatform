@@ -39,9 +39,10 @@ export const AdminStory = () => {
           data.missionTitle
             .toLowerCase()
             .includes(e.target.value.toLowerCase()) ||
-          data.userName.toLowerCase().includes(e.target.value.toLowerCase()) ||
-          data.missionId.toString().includes(e.target.value) ||
-          data.userId.toString().includes(e.target.value)
+          data.storyTitle
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase()) ||
+          data.fullName.toLowerCase().includes(e.target.value.toLowerCase())
         );
       })
     );
@@ -113,10 +114,13 @@ export const AdminStory = () => {
                       <td>{data.storyTitle}</td>
                       <td>{data.fullName}</td>
                       <td>{data.missionTitle}</td>
-                      
-                      <td>
-                        <button onClick={() => handleEditFun(data.id)}>
-                          View1
+
+                      <td className="story-action">
+                        <button
+                          className="admin-story-view-btn"
+                          onClick={() => handleEditFun(data.id)}
+                        >
+                          View
                         </button>
                         <button onClick={() => handleEditFun(data.id)}>
                           <img
@@ -129,7 +133,8 @@ export const AdminStory = () => {
                         <button onClick={() => handleEditFun(data.id)}>
                           <img
                             src={
-                              require("../../../Assets/signs/cancelmark.svg").default
+                              require("../../../Assets/signs/cancelmark.svg")
+                                .default
                             }
                             alt="edit"
                           />

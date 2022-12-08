@@ -1000,7 +1000,8 @@ export const adminStory = [
   },
   {
     id: 2338,
-    storyTitle: "Our power of choice is untrammelled f business it will frequently",
+    storyTitle:
+      "Our power of choice is untrammelled f business it will frequently",
     missionTitle: "Our power of choice is untrammelled",
     fullName: "Peter Wallace",
   },
@@ -1016,7 +1017,6 @@ export const adminStory = [
     missionTitle: "Beguiled and demoralized by the charms",
     fullName: "Teri Dactyl",
   },
-
 ];
 
 export const statusData = [
@@ -1034,4 +1034,14 @@ export const departmentData = [
 export const missionTypeData = [
   { name: "Time", value: "Time" },
   { name: "Goal", value: "Goal" },
+];
+
+export const timesheetHour = [
+  {
+    id: 112,
+    mission: "Environment Conservation",
+    date: "22/02/2022",
+    hour: 1,
+    minute: 30,
+  },
 ];

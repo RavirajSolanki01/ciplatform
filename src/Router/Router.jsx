@@ -4,6 +4,7 @@ import { Home, Login, Mission, PrivacyPolicy, StoryPage } from "../Components";
 import { Admin } from "../Components/Admin/Admin";
 import { ShareStory } from "../Components/ShareStory/ShareStory";
 import { StoryDetail } from "../Components/StoryDetail/StoryDetail";
+import { Timesheet } from "../Components/Timesheet/Timesheet";
 import UserEditProfile from "../Components/UserEditProfile";
 
 export const Router = () => {
@@ -18,6 +19,7 @@ export const Router = () => {
         <Route exact path="/share-story" element={<ShareStory />} />
         <Route exact path="/story-detail" element={<StoryDetail />} />
         <Route exact path="/edit-profile" element={<UserEditProfile />} />
+        <Route exact path="/timesheet" element={<Timesheet />} />
         <Route exact path="/admin/*" element={<Admin />} />
       </Routes>
     </div>

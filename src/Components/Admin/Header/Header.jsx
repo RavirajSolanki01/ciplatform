@@ -1,12 +1,7 @@
 import moment from "moment/moment";
 import { useEffect, useState } from "react";
-import { DropDown } from "../../../Helper";
+import { Link } from "react-router-dom";
 
-const btnlist = [
-  { name: "Item 1", link: "www.google.com" },
-  { name: "Item 2", link: "www.google.com" },
-  { name: "Item 3", link: "www.google.com" },
-];
 export const Header = () => {
   const [state, setState] = useState("");
   useEffect(() => {
@@ -25,7 +20,15 @@ export const Header = () => {
           alt="profile"
         />
         <div className="navbar-profile-drop-div">
-          <DropDown name="Evan Donohue" items={btnlist} />
+        <div className="profile-options" >
+            <span>Evan Donohue</span>
+            <div className="profile-options-in" >
+              <Link to="/edit-profile">Profile</Link>
+              <Link to="/timesheet">Volunteering Timesheet</Link>
+              <Link to="/">Log Out</Link>
+
+            </div>
+          </div>
         </div>
       </div>
     </div>

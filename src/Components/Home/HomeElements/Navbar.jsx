@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { CustomModal, DropDown, NormalButton } from "../../../Helper";
 import { NewMissionForm } from "../../Forms";
@@ -52,7 +53,14 @@ export const Navbar = () => {
           alt="profile"
         />
         <div className="navbar-profile-drop-div">
-          <DropDown name="Evan Donohue" items={btnlist} />
+          <div className="profile-options" >
+            <span>Evan Donohue</span>
+            <div className="profile-options-in" >
+              <Link to="/edit-profile">Profile</Link>
+              <Link to="/timesheet">Volunteering Timesheet</Link>
+              <Link to="/">Log Out</Link>
+            </div>
+          </div>
         </div>
       </div>
       {showModal && (

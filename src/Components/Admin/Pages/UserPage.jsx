@@ -27,7 +27,6 @@ export const UserPage = () => {
     if (dataId.editId === null) {
       setCurData((pre) => [...pre, isEditData]);
       setState((pre) => [...pre, isEditData]);
-      
     } else {
       setCurData(curData.map((e) => (e.id === dataId.editId ? isEditData : e)));
       setState(curData.map((e) => (e.id === dataId.editId ? isEditData : e)));

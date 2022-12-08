@@ -201,7 +201,22 @@ tr > td > h4 {
   gap: 10px;
 }
 .admin-mission-date-div > div {
-width: 100%;
+  width: 100%;
+}
+
+/*             AdminStory CSS            */
+
+.story-action {
+  display: flex;
+  gap: 10px;
+}
+.admin-story-view-btn {
+  width: 48px;
+  height: 25px;
+  color: #f88634;
+  border-radius: 12.5px;
+  border: 1px solid #f88634 !important;
+  font-size: 12px;
 }
 
 /*             Navigation CSS            */
