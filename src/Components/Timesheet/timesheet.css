@@ -51,10 +51,55 @@
   border: none;
   cursor: pointer;
 }
-.timesheet-table{
-    width: 100%;
+.timesheet-table {
+  width: 100%;
 }
-.timesheet-table>thead>tr>th,
-.timesheet-table>tbody>tr>td{
-    text-align: left;
+.timesheet-table > thead > tr > th,
+.timesheet-table > tbody > tr > td {
+  text-align: left;
+  padding: 10px 0;
+}
+.timesheet-hour-min {
+  display: flex;
+  gap: 20px;
+}
+.timesheet-hour-inp,
+.timesheet-actions,
+.timesheet-actions > input,
+.timesheet-hour-inp > input {
+  width: 100%;
+}
+
+.timesheet-hour-inp > input,
+.timesheet-actions > input {
+  height: 38px;
+}
+
+.timesheet-actions {
+  margin-top: 30px;
+}
+.timesheet-date-input {
+  margin-top: 31px;
+}
+.timesheet-date-input > input {
+  height: 38px;
+  padding: 0 0 0 15px;
+  width: 100%;
+}
+.timesheet-date-input > label {
+  font-size: 15px;
+}
+
+.timesheet-hour-textarea {
+  margin-bottom: 30px;
+}
+.timesheet-hour-textarea > textarea {
+  height: 130px;
+  width: 1090px;
+}
+
+.timesheet-hour-btn {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
 }

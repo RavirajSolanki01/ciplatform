@@ -1036,6 +1036,21 @@ export const missionTypeData = [
   { name: "Goal", value: "Goal" },
 ];
 
+export const timesheetHourData = [
+  {
+    name: "Environment Conservation",
+    value: "Environment Conservation",
+  },
+  {
+    name: "Education Programme",
+    value: "Education Programme",
+  },
+  {
+    name: "Faith Community Fellowship",
+    value: "Faith Community Fellowship",
+  },
+];
+
 export const timesheetHour = [
   {
     id: 112,
@@ -1043,5 +1058,22 @@ export const timesheetHour = [
     date: "22/02/2022",
     hour: 1,
     minute: 30,
+    message: "Hello everyone.",
+  },
+];
+export const timesheetGoals = [
+  {
+    id: 1112,
+    mission: "Environment Conservation",
+    date: "22/02/2022",
+    action: 1,
+    message: "Hello everyone in goals.",
+  },
+  {
+    id: 1113,
+    mission: "Education Programme",
+    date: "22/02/2022",
+    action: 0,
+    message: "Hello everyone in goals.",
   },
 ];

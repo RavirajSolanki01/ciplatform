@@ -60,6 +60,8 @@ export const NormalInput = ({
         />
       ) : inputType === "textarea" ? (
         <textarea
+        onChange={onChange}
+        value={value}
           data-testid="normal-textarea"
           type={type}
           name={name}
