@@ -3,9 +3,9 @@ import { dropdowndata } from "../../../Data/Data";
 import { DropDown } from "../../../Helper/DropDown";
 import "./homelements.css";
 
-export const Searchbar = () => {
+export const Searchbar = ({ onChange, value }) => {
   return (
-    <div className="searchbar"  data-testid="searchbar" >
+    <div className="searchbar" data-testid="searchbar">
       <div className="search-div">
         <img
           src={require("../../../Assets/signs/search.svg").default}
@@ -14,6 +14,8 @@ export const Searchbar = () => {
         <input
           className="searchbar-input"
           type="text"
+          value={value}
+          onChange={onChange}
           placeholder="Search mission..."
         />
       </div>

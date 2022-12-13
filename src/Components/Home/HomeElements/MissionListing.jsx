@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { listData } from "../../../Data/Data";
 import "./homelements.css";
@@ -6,7 +6,18 @@ import { MissionList } from "./MissionList";
 
 export const MissionListing = () => {
   const viewData = useSelector((state) => state.view.value);
+  const [missionData, SetMissionData] = useState(listData);
 
+  const handleChange = (e) => {
+    SetMissionData(
+      listData.filter((data) => {
+        return data.title.toLowerCase().includes(e.target.value.toLowerCase());
+      })
+    );
+  };
+
+
+  
   return (
     <div
       className={`${
@@ -16,7 +27,7 @@ export const MissionListing = () => {
       }`}
       data-testid="mission-listing"
     >
-      {listData.map(
+      {missionData.map(
         ({
           id,
           theme,

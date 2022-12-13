@@ -23,6 +23,7 @@ export const Timesheet = () => {
   const [editId, setEditId] = useState();
   const [modal, setModal] = useState({ goal: false, hour: false });
   const [deleteModal, setDeleteModal] = useState(false);
+  const [deleteId, setDeleteId] = useState({ id: null, type: "" });
 
   const handleEditFunHour = (id = null) => {
     setModal((pre) => ({ ...pre, hour: true }));
@@ -44,18 +45,23 @@ export const Timesheet = () => {
       setModal({ hour: false, goal: false });
     }
   };
-  const handleDelete = (data) => {
-    setEditId(data);
+  const handleDelete = (data, type) => {
+    // setEditId(data);
+    setDeleteId({ id: data, type });
     setDeleteModal(true);
   };
   const handleDeleteFun = () => {
-    setEditGoalData(goalsData.filter((data) => data.id === editId));
+    if (deleteId.type === "hour") {
+      setState(state.filter((data) => data.id !== deleteId.id));
+    } else {
+      setGoalsData(state.filter((data) => data.id !== deleteId.id));
+    }
     setDeleteModal(false);
   };
+  console.log(state, "LLOO");
   return (
     <div className="timesheet-main">
       <Navbar />
-
       {(modal?.hour || modal?.goal) && (
         <CustomModal
           title={`Please input below Volunteering ${
@@ -84,7 +90,6 @@ export const Timesheet = () => {
                 }
               }}
             />
-
             {modal?.goal && (
               <NormalInput
                 placeholder="Enter Actions"
@@ -99,7 +104,6 @@ export const Timesheet = () => {
                 }
               />
             )}
-
             {modal?.hour && (
               <NormalInput
                 posX="1063px"
@@ -197,7 +201,6 @@ export const Timesheet = () => {
           </div>
         </CustomModal>
       )}
-
       {deleteModal && (
         <CustomModal
           width="634px"
@@ -222,7 +225,6 @@ export const Timesheet = () => {
           </div>
         </CustomModal>
       )}
-
       <div className="timesheet-div-outer">
         <div className="timesheet-div">
           <span className="timesheet-title">Volunteering Timesheet</span>
@@ -240,36 +242,46 @@ export const Timesheet = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {state.map((data) => (
-                    <tr key={data.id}>
-                      <td>{data.mission}</td>
-                      <td>{data.date}</td>
-                      <td>{data.hour}h</td>
-                      <td>{data.minute}min</td>
-                      <td>
-                        <button
-                          onClick={() => handleEditFunHour(data.id)}
-                          className="timesheet-edit-btn"
-                        >
-                          <img
-                            src={require("../../Assets/signs/edit.svg").default}
-                            alt="edit"
-                          />
-                        </button>
-                        <button
-                          onClick={() => handleDelete(data.id)}
-                          className="timesheet-edit-btn"
-                        >
-                          <img
-                            src={
-                              require("../../Assets/signs/delete.svg").default
-                            }
-                            alt="delete"
-                          />
-                        </button>
+                  {state.length ? (
+                    state.map((data) => (
+                      <tr key={data.id}>
+                        <td>{data.mission}</td>
+                        <td>{data.date}</td>
+                        <td>{data.hour}h</td>
+                        <td>{data.minute}min</td>
+                        <td>
+                          <button
+                            onClick={() => handleEditFunHour(data.id)}
+                            className="timesheet-edit-btn"
+                          >
+                            <img
+                              src={
+                                require("../../Assets/signs/edit.svg").default
+                              }
+                              alt="edit"
+                            />
+                          </button>
+                          <button
+                            onClick={() => handleDelete(data.id, "hour")}
+                            className="timesheet-edit-btn"
+                          >
+                            <img
+                              src={
+                                require("../../Assets/signs/delete.svg").default
+                              }
+                              alt="delete"
+                            />
+                          </button>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan={5}>
+                        <h4>No data found</h4>
                       </td>
                     </tr>
-                  ))}
+                  )}
                 </tbody>
               </table>
             </div>
@@ -284,32 +296,45 @@ export const Timesheet = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {goalsData.map((data) => (
-                    <tr kay={data.id}>
-                      <td>{data.mission}</td>
-                      <td>{data.date}</td>
-                      <td>{data.action}</td>
-                      <td>
-                        <button
-                          onClick={() => handleEditFunGoal(data.id)}
-                          className="timesheet-edit-btn"
-                        >
-                          <img
-                            src={require("../../Assets/signs/edit.svg").default}
-                            alt="edit"
-                          />
-                        </button>
-                        <button className="timesheet-edit-btn">
-                          <img
-                            src={
-                              require("../../Assets/signs/delete.svg").default
-                            }
-                            alt="delete"
-                          />
-                        </button>
+                  {goalsData.length ? (
+                    goalsData.map((data) => (
+                      <tr kay={data.id}>
+                        <td>{data.mission}</td>
+                        <td>{data.date}</td>
+                        <td>{data.action}</td>
+                        <td>
+                          <button
+                            onClick={() => handleEditFunGoal(data.id)}
+                            className="timesheet-edit-btn"
+                          >
+                            <img
+                              src={
+                                require("../../Assets/signs/edit.svg").default
+                              }
+                              alt="edit"
+                            />
+                          </button>
+                          <button
+                            onClick={() => handleDelete(data.id)}
+                            className="timesheet-edit-btn"
+                          >
+                            <img
+                              src={
+                                require("../../Assets/signs/delete.svg").default
+                              }
+                              alt="delete"
+                            />
+                          </button>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan={4}>
+                        <h4>No data found</h4>
                       </td>
                     </tr>
-                  ))}
+                  )}
                 </tbody>
               </table>
             </div>

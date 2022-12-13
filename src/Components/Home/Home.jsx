@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { NormalButton } from "../../Helper";
 import { setCookieBtnStatus } from "../../Redux/cookieReducer";
+import { setSearch } from "../../Redux/searchReducer";
 import { Footer } from "../Footer/Footer";
 import "./home.css";
 import { Missionbar, Navbar, Searchbar, Tagbar } from "./HomeElements";
@@ -15,12 +16,14 @@ export const Home = () => {
   const handleClick = (e) => {
     dispatch(setCookieBtnStatus(e));
   };
+  // const data = useSelector(state=>state.search.value)
+  // console.log(data,"JJKKJJJ");
 
   return (
     <div className="home-main">
       <div>
         <Navbar />
-        <Searchbar />
+        <Searchbar onChange={(e) => dispatch(setSearch(e.target.value))} />
       </div>
       <div className="home-hero" style={{ padding: "0 240px" }}>
         {true ? (
